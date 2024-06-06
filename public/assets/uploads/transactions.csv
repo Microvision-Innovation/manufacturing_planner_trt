@@ -1,0 +1,3 @@
+Type,Transaction_Date,Bank_Account,Division,Account,Transaction_no,Description,Amount,Transacted_By
+income,13-01-2019,Cooperative A/C,Huruma Ledger,2000/001,20300,Test Data,3000,Simon
+income,13-01-2019,Cooperative A/C 1,Chak Ledger,2000/002,20300,Test Data,3000,Edd

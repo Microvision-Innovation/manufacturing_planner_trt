@@ -1,0 +1,5 @@
+employee_no,id_number,surname,other_names,address,phone,email,gender,dob,pin,nssf,nhif,marrital_status,account_number,bank_code,branch_name,branch_code,payment_period_name,payment_type,basic_pay,hourly_payment,position,department_name,employment_type,employment_form,employment_date,job_type
+DC_001,12345678,Doe,John,test address,722123456,mail@damacrest.com,Male,2/24/2021,Axxxxxx12344P,123456,123456,Married,123456789,1,Kikuyu,code 1,Monthly,Salary,10000,0,Test Position,Administration,Regural,Permanent,2/24/2021,Proffesional Staff
+DC_002,12345679,Doe,Jane,test address,722123457,mail@damacrest.com,Male,2/25/2021,Axxxxxx12345P,123457,123457,Married,123456790,2,Kikuyu,code 2,Yearly,Hourly,10001,1,Test Position,Accounts,Probatory,Temporary,2/24/2021,Support Staff
+DC_003,12345680,Doe,Sam,test address,722123458,mail@damacrest.com,Male,2/26/2021,Axxxxxx12346P,123458,123458,Married,123456791,3,Kikuyu,code 3,Monthly,Salary,10002,2,Test Position,Support Staff﻿,Contractual,Permanent,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,

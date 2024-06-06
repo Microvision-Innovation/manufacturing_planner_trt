@@ -1,0 +1,3 @@
+employee_no,id_number,surname,other_names,address,phone,email,gender,dob,pin,nssf,nhif,marrital_status,account_number,bank_code,branch_name,branch_code,payment_period_name,payment_type,basic_pay,hourly_payment,position,department_name,employment_type,employment_form,employment_date,job_type
+DC_001,12345678,Doe,John,,,,Male,,Axxxxxx12344P,123456,123456,,123456789,1,Kikuyu,code 1,Monthly,Salary,10000,0,Director,Administration,Regular,Permanent,2/24/2021,Proffesional Staff
+DC_002,12345679,Doe,Jane,,,,Male,,Axxxxxx12345P,123457,123457,,123456790,1,Kikuyu,code 2,Monthly,Hourly,10001,1,Director,Accounts,Probatory,Temporary,2/24/2021,Support Staff

@@ -1,0 +1,211 @@
+employee_no,id_number,surname,other_names,address,phone,email,gender,dob,pin,nssf,nhif,marrital_status,account_number,bank_code,branch_name,branch_code,payment_period_name,payment_type,basic_pay,hourly_payment,position,department_name,employment_type,employment_form,employment_date,job_type
+2,30045489,SAIYALEL,ALICE TITO,,,,Female,,A009701545R,2010937508,6201279,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Teaching Staff,Thogoto Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+6,21970698,MUTUKU,ANNOELYNE MBESA,,,,Female,,A003263255N,95018824,2326472,,1.32E+12,68,Embakasi,132,Monthly,Salary,20000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+8,8472034,NGETHE,BEATRICE WANGARI,,,,Female,,A004332659T,961593814,2811665,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+16,13799980,NGIGE,CONSOLATA WANJIRU,,,,Female,,A005267540T,249463822,4811119,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+17,26466693,MBUGUA,DAVID KAMAU,,,,Male,,A008586781R,2006576437,5396597,,1140765019,1,Kikuyu,129,Monthly,Salary,38200,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+20,35238895,WANJIRU,ELZABETH ,,,,Female,,A014386533U,1000000,1000000,,1.12E+12,11,Kikuyu,133,Monthly,Salary,9000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+21,22683956,KIINI,EMILY WAVETI,,,,Female,,A009692407W,851796818,4729971,,1232596655,1,Kikuyu,129,Monthly,Salary,22000,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+23,28806598,NYAMAMBA,EZRAH OLWONGA,,,,Male,,A009666929Z,2010940648,2177729,,7.77E+12,68,Kangemi,137,Monthly,Salary,32318,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+24,25252861,AKINYI,FAITH ODHIAMBO,,,,Female,,A006422397Z,394005821,3509013,,1.37E+12,68,Kangemi,137,Monthly,Salary,20000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+26,23559849,KARONDO,FLORENCE WANJIKU,,,,Female,,A007218032N,156097826,6316713,,5.50E+11,68,Westlands,55,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+27,5181629,NJOROGE,FRANCIS MUNDERU,,,,Male,,A004794111N,Retired,3392043,,20100026549,68,Fourways,2,Monthly,Salary,20000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+28,13147576,WACHIYE,GEOFFREY KIKO,,,,Male,,A008871571D,540922919,4622432,,5.70E+11,68,Kikuyu,57,Monthly,Salary,11000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+31,3110418,WANGARI,GRACE GATHONI,,,,Female,,A002424931L,629015813,4810875,,6.30E+11,68,Kawangware,63,Monthly,Salary,18000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+32,10921844,MWANIKI,GRACE MMBONE,,,,Female,,A006229989R,203277821,3913103,,2.60E+11,68,Kimathi Street,26,Monthly,Salary,22500,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+33,20898027,CHEGE,GRACE WANJIKU,,,,Female,,A004109439R,691975817,6116426,,1178314936,1,Kikuyu,129,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+37,22750494,MUIRU,HOTTENSIAH WANJIRU,,,,Female,,A005327004I,117044822,2266737,,1.20E+11,68,Tom Mboya,12,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+38,10433441,ROMANUSI,IRENE AYOYI,,,,Female,,A003305580T,376259817,785597,,1168064740,1,Kikuyu,129,Monthly,Salary,22500,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+39,1907791,NGANGA,ISAAC WAINAINA,,,,Male,,A001779855S,24033261X,4810956,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+49,8679895,NDITU,JONATHAN MWANGI,,,,Male,,A003306917N,37080938,1189423,,6.30E+11,68,Kawangware,63,Monthly,Salary,30000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+50,20856921,MAINA,JOSEPH MWANGI,,,,Male,,A005887210X,382181921,2228011,,1.12E+12,11,Kikuyu,133,Monthly,Salary,26000,0,Teaching Staff,Thogoto Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+51,23350623,KAMAU,JOSPHINE WANJIRU,,,,Female,,A007742950B,734875819,4574498,,1240141548,1,Kikuyu,129,Monthly,Salary,20000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+53,21062688,MUNGUTI,JUDY MUTHONI,,,,Female,,A006325147R,249460823,2492653,,2.00E+11,68,Naivasha,20,Monthly,Salary,51000,0,Principal,Principal,Regular,Permanent,1/1/21,Proffesional Staff
+54,27123443,KIPNGETICH,JUSTUS KETER,,,,Male,,A008790695N,2010941538,6113527,,1176464442,1,Kikuyu,129,Monthly,Salary,32318,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+55,24282447,WANINGU,JUSTUS OMWANGWE,,,,Male,,A005354760U,244986916,3607988,,6.30E+11,68,Kawangware,63,Monthly,Salary,25000,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+58,22714874,WACHIYE,LUCAS WANJALA,,,,Male,,A009693820Z,843548916,4586730,,5.70E+11,68,Kikuyu,57,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+60,27718993,MWANGI,LYDIA WANGUI,,,,Female,,A008584307V,324696825,3423586,,1162156279,1,Kikuyu,129,Monthly,Salary,28000,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+63,24339003,MUNGAI,MARY NDUTA,,,,Female,,A007085237R,2002596709,4755132,,5.70E+11,68,Kikuyu,57,Monthly,Salary,28000,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+65,25962196,MERCYLINE,BWONDA BOCHERE,,,,Female,,A006266589L,2000274528,4437598,,1169817807,1,Kikuyu,129,Monthly,Salary,23000,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+71,23104692,KARIUKI,MONICAH WANJIRU,,,,Female,,A009174199C,382824822,4622904,,1145547966,1,Kikuyu,129,Monthly,Salary,20000,0,Support Staff,Administration,Regular,Permanent,1/1/21,Proffesional Staff
+73,26568312,WACHIYE,NANCY NANJALA,,,,Female,,A009695782U,2010936298,6116130,,5.70E+11,68,Kikuyu,57,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+75,26870083,NYATOKA,ONESMUS NYAMATO,,,,Male,,A007047282Y,152165932,3960676,,1226753213,1,Kikuyu,129,Monthly,Salary,35000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+76,25264958,ABABU,PAULINE AMUYEYELI,,,,Female,,A008626735F,255578822,3625531,,3.00E+11,68,Eldoret,30,Monthly,Salary,20000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+77,13411004,WANGUI,PAULINE NJERI,,,,Female,,A005385451X,249457822,3996582,,1.50E+11,68,Mama Ngina,15,Monthly,Salary,24000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+78,13100987,KAMAU,PENNINAH NYAMBURA,,,,Female,,A002640032D,466190816,1510704,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+83,13463623,GASHOTO,ROBERT ,,,,Male,,A002704078Z,409562920,905685,,1235817989,1,Kikuyu,129,Monthly,Salary,26377,0,Support Staff,Administration,Regular,Permanent,1/1/21,Proffesional Staff
+85,28515479,NJUGUNA,ROSE THIRA,,,,Female,,A007226625R,569397820,4694990,,1.37E+12,68,Kangemi,137,Monthly,Salary,18000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+88,11348058,WANGUI,SAMUEL MBURU,,,,Male,,A004546573H,453223923,1613038,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+90,13673629,HINGA,SERAH WANGUI,,,,Female,,A006347900Q,759856818,4383466,,1117601358,1,Kikuyu,129,Monthly,Salary,24000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+91,21933993,KARANJA,SERAH WANJIKU,,,,Female,,A005037818O,15610282X,4495627,,1212333071,1,Kikuyu,129,Monthly,Salary,64000,0,Principal,Principal,Regular,Permanent,1/1/21,Proffesional Staff
+95,25631255,MBUGUA,SUSAN GATHONI,,,,Female,,A007648454M,2001158499,6200685,,6.30E+11,68,Kawangware,63,Monthly,Salary,20000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+102,22185318,KAMAU,ZIPPORAH WANGUI,,,,Female,,A004677156J,759587817,194902,,3.10E+11,68,Kibera,117,Monthly,Salary,20000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+103,21555169,KARIUKI,JOHN KAHIU,,,,Male,,A008874663N,2012482111,4694924,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+106,22807702,WAIRIMU,NANCY WAMBUI,,792436570,,Female,,A003962532V,2012483389,6320236,,5.70E+11,68,Kikuyu,57,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+107,3088621,KANIU,CHRISTINE NJERI,,,,Female,,A002922979L,416767818,R0348693,,20100016976,68,Fourways,2,Monthly,Salary,20000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+109,23744949,KAHI,GRACE SHIWANI,,,,Female,,A009992085Z,2002294557,6282384,,6.30E+11,68,Kawangware,63,Monthly,Salary,20500,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+113,21375611,GLADYS,SIMIYU NANYAMA,,,,Female,,A007438432X,113228821,4135067,,6.30E+11,68,Kawangware,63,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+116,27942860,KORIR,ERNEST KIPNGENO,,,,Male,,A005869631L,485470918,3061101,,1219161462,1,Kikuyu,129,Monthly,Salary,28000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+118,28492283,NDUNGU,MARY WAMAMI,,,,Female,,A008451114Z,2003294936,5659487,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+120,22324654,NDIBO,FLORENCE WAMBUI,,,,Female,,A009771535W,372266827,6116293,,5.70E+11,68,Kikuyu,57,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+125,7544308,NJOROGE,JOYCE WANJIRU,,,,Female,,A002254064M,Retired,2689747,,1129920666,1,Kikuyu,129,Monthly,Salary,18000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+127,36684418,WAIRIMU,KELVIN MBURU,,,,Male,,A011843636V,2026521507,9794295,,1217228543,1,Kikuyu,129,Monthly,Salary,10000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+131,13074561,MUKUNDI,ANN WANJIKU,,,,Female,,A003879387Z,88648810,1397559,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+133,22408086,IMBITOLO,BRENDA ,,,,Female,,A010362817E,2014496653,6857592,,7.77E+12,68,Nyali Centre Corporaye,138,Monthly,Salary,13000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+135,7878249,MUHUHU,FELISTA WANJIRU,,,,Female,,A002276497H,307987817,691027,,1.50E+11,68,Mama Ngina,15,Monthly,Salary,19000,0,Support Staff,Administration,Regular,Permanent,1/1/21,Proffesional Staff
+142,11509004,MWANIKI,ELIZABETH NYOKABI,,,,Female,,A008805459M,755149815,2859267,,6.30E+11,68,Kawangware,63,Monthly,Salary,20000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+146,28217338,NJONGE,PETER ,,,,Male,,A006496268K,65661191X,6221819,,1154531228,1,Kikuyu,129,Monthly,Salary,34671,0,Support Staff,Administration,Regular,Permanent,1/1/21,Proffesional Staff
+147,29665222,DERO,ANTHONY GUNGA,,,,Male,,A009347936F,2012321095,R6294311,,1141732475,1,Kikuyu,129,Monthly,Salary,55710,0,Principal,Principal,Regular,Permanent,1/1/21,Proffesional Staff
+151,8845475,GATUNE,ERNEST NDUNGU,,,,Male,,A001292687Y,703303,920144,,1.12E+12,11,Kikuyu,133,Monthly,Salary,20000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+154,20193350,SHAVULIMO,JUDITH KHASOHA,,,,Female,,A007044257P,372218822,4452769,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+162,25434057,KINYUA,SUSAN WAMAITHA,,,,Female,,A009739938U,2028163961,3200493,,1.30E+11,68,Nakuru,13,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+166,32586715,KARAGO,IRENE MUTHONI,,,,Female,,A009792246D,2015891312,7018445,,1181084466,1,Kikuyu,129,Monthly,Salary,26000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+169,26464286,NYOIKE,JOYCE NYAMBURA,,,,Female,,A008394027R,572585829,2635266,,5.70E+11,68,Kikuyu,57,Monthly,Salary,24000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+174,33733197,AYOMA,RUTH ADEMA,,,,Female,,A011920553R,2022498572,7867692,,1.37E+12,68,Kangemi,137,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+188,10488699,NYINGI,MARGARET WAHITO,,,,Female,,A005934822Z,622330810,2463824,,1210181339,1,Kikuyu,129,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+190,31416869,KATHURE,KELLYPET ,,,,Female,,A010864359E,2016162308,14521801,,1208893963,1,Kikuyu,129,Monthly,Salary,20000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+199,22487664,MUGA,WILLIAM MADARA,,,,Female,,A009432755X,2006184114,9748944,,1177071770,1,Eldama Ravine,163,Monthly,Salary,25000,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+205,31517667,WANJIKU,RUTH MUGURE,,,,Female,,A008065077Y,2021096938,7602450,,1218581085,1,Kikuyu,129,Monthly,Salary,30000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+206,33570657,NJOROGE,MERCY WANJIRU,,,,Female,,A011088432N,2019959767,7422496,,1216981264,1,Limuru,155,Monthly,Salary,20000,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+208,33785001,WACHIYE,DIANA NANJALA,,,,Female,,A011793700N,2022042243,7445522,,5.70E+11,68,Kikuyu,57,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+217,22109995,KARIUKI,ESTHER NJERI,,,,Female,,A007506018P,2022498456,1236418,,1.11E+12,11,Kikuyu,133,Monthly,Salary,12000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+218,29060429,WAITHAKA,SABINA WANJIRU,,,,Female,,A011435771W,2022045586,7452320,,1.37E+12,68,Kangemi,137,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+223,21890863,WAWERU,SIMON NGIGI,,,,Male,,A004773190D,756579910,4747461,,1271290960,1,Kikuyu,129,Monthly,Salary,32318,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+226,11136889,NYAUNDI,WISLEY KAUNDA,,,,Male,,A001515857C,107333929,876033,,1.70E+11,68,Limuru,69,Monthly,Salary,32318,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+228,21766491,AMUKO,DAMARIS ANYISO,,,,Female,,A005564139W,33458820,5253905,,6.30E+11,68,Kawangware,63,Monthly,Salary,28000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+232,32388986,KARUME,MIRIAM ,,,,Female,,A009863888W,2021491835,7663852,,6.30E+11,68,Kawangware,63,Monthly,Salary,15000,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+235,20744108,MWANGI,JOSPHINE NJERI,,,,Female,,A003136155M,2021947306,7741181,,5.50E+11,68,Kangemi,137,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+236,31483481,RURAYA,BENSON WACHIRA,,,,Male,,A007514621O,202252672X,7827374,,1144686474,1,Kikuyu,129,Monthly,Salary,30000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+237,30051270,KATHURE,KANYINGA GLADYS,,,,Female,,A007538714Z,2019142971,7782765,,1236227611,1,Kikuyu,129,Monthly,Salary,28000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+249,33557134,OTENGO,ALICE AKINYI,,,,Female,,A013189857F,202628931X,9744519,,1177069687,1,Eldama Ravine,163,Monthly,Salary,17000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+251,10905491,KAGWI,JOHN NJOROGE,,,,Male,,A003019374W,2011307538,6148737,,9.40E+11,68,Tea Room,94,Monthly,Salary,20000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+258,32253294,WANJIRU,JACINTA NYAMBURA,,,,Female,,A009066722R,2012622384,6338911,,1152778455,1,Githunguri,193,Monthly,Salary,22000,0,Support Staff,Administration,Regular,Permanent,1/1/21,Proffesional Staff
+266,4829275,MUGURE,FLORENCE ,,,,Female,,A001358326S,Retired,4695117,,37549,11,Stima Plaza ,35,Monthly,Salary,25000,0,Director,Director,Regular,Permanent,1/1/21,Proffesional Staff
+269,29523127,NGUGI,LUCY NDUTA,,,,Female,,A009862038A,2011711873,6220410,,6.90E+11,68,Limuru,69,Monthly,Salary,24000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+270,27797133,KIDAYU,PHYLIS ,,,,Female,,A010271209V,2023007955,8101110,,1200583906,1,Lumbale,183,Monthly,Salary,18000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+271,20355528,ODHIAMBO,JOB ISAAC,,,,Male,,A003305546P,110807,784474,,1253088934,1,Kipande House,101,Monthly,Salary,32318,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+274,29389726,RONO,KIBET WALTER,,,,Male,,A006421572N,2008626064,4862731,,1.12E+12,11,Kikuyu,133,Monthly,Salary,26377,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+275,27531749,NDEGWA,ELIZABETH WANGARI,,,,Female,,A008659919N,2028174179,14011675,,1214824676,1,Limuru,155,Monthly,Salary,18000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Proffesional Staff
+285,14634629,KATA,MICHAEL NGUSYA,,,,Male,,A008273290W,2013635304,1337762,,5.70E+11,68,Kikuyu,57,Monthly,Salary,24000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+288,9056850,KIARII,CATHERINE NJOKI,,,,Female,,A002465112F,511090811,249696,,5.70E+11,68,Kikuyu,57,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+292,29339807,MWENDA,MARTIN ,,,,Male,,A006636737G,2012492136,6807649,,1265111073,1,Kikuyu,129,Monthly,Salary,36000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+294,277747933,OMOLLO,OLIVIA AUMA,,,,Female,,A006446299M,387409823,3497460,,1.11E+12,11,Kikuyu,133,Monthly,Salary,20000,0,Teaching Staff,Thogoto Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+302,28675664,MIRONGO,EUNICE AKEYO,,,,Female,,A008494282E,2006866974,28675664,,1.37E+12,68,Kangemi,137,Monthly,Salary,20000,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+309,29428671,MUSOMBA,DANIEL ,,,,Male,,A006782511O,2001437314,5156206,,1250495180,1,Kikuyu,129,Monthly,Salary,32318,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+310,2514657,WAMBUI,MAGARET ,,,,Female,,A011785572I,2025217129,2514657,,1.12E+12,11,Kikuyu,133,Monthly,Salary,20000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+311,22217151,MASAKA,JACKLINE MORAA,,,,Female,,A004430954P,839647,4262579,,1112869220,1,Moi Avenue,100,Monthly,Salary,20000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+316,11645556,KARANJA,SINFROZA WAMBUI,,,,Female,,A006086669G,556786815,1953675,,1271740095,1,Kikuyu,129,Monthly,Salary,22000,0,Support Staff,Administration,Regular,Permanent,1/1/21,Proffesional Staff
+317,30302186,ABWA,MAXMILLA ,,,,Female,,A012657082F,2026012663,9580145,,1.37E+12,68,Kangemi,137,Monthly,Salary,20000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+318,13267715,MUSAU,JONATHAN MUSYOKI,,,,Male,,A007326752Z,449314928,1801457,,6.70E+11,68,Limuru,69,Monthly,Salary,34671,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+324,29686870,OMBONGI,BRIAN NYABUARI,,,,Male,,A006870576H,2010898179,6114323,,2.00E+11,68,Naivasha,20,Monthly,Salary,36000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+328,20395160,KAMARU,SALOME WANJIRU,,,,Female,,A010051839B,227622820,2997139,,1169999581,1,Kikuyu,129,Monthly,Salary,10000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+331,25857476,ABUYA,PAUL ODIWUOR,,,,Male,,A012998920K,2021669764,9553561,,9.80E+11,68,Homa Bay,98,Monthly,Salary,28000,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+334,21186007,NZAOMBI,LOISE ,,720566399,,Female,,A005988544R,2023197377,5807095,,1.12E+12,11,Kawangware,42,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+341,22103351,KAGEHA,IRIS ,,,,Female,,A007260616D,317706822,6268446,,1.11E+12,11,University Way,31,Monthly,Salary,21000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+346,32104114,ONGAGA,OCHAKA ,,,,Male,,A007569980V,2019140912,9700615,,1254040064,1,Kikuyu,129,Monthly,Salary,28000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+347,32007296,NYOKABI,FAITH ,,,,Female,,A011660556S,2028124201,7736209,,1254063080,1,Kikuyu,129,Monthly,Salary,18000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+349,26350406,NASIKE,JOSPHINE ,,701056106,,Female,,A009684899Z,623336820,6113815,,1.12E+12,11,Kangemi,74,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+353,34625992,NJUA,MARGARET WANJIRU,,,,Female,,A013361282K,2026671264,9833668,,1255462698,1,Kikuyu,129,Monthly,Salary,15000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Proffesional Staff
+359,24777485,WANJIKU,MERCY ,,,,Female,,A007352268V,442017820,3645141,,5.70E+11,68,Limuru,69,Monthly,Salary,20000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+362,13865602,KASAMBA,EDITH ,,,,Female,,A010843079B,231271824,873974,,1271335441,1,Kikuyu,129,Monthly,Salary,20000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+363,10474088,NABWIRE,CAROLLIN ,,,,Female,,A003455158Y,503791/814,1462485,,20100032203,68,Kikuyu,57,Monthly,Salary,28000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+368,29772608,MORAA,STEPHANIE ,,719404533,,Female,,A008499348N,2019538943,7392723,,1.37E+12,68,Kangemi,137,Monthly,Salary,25000,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+370,27013417,MWANGE,LEAH ,,729738526,,Female,,A012755817X,2025097067,9097446,,1115039342,1,Prestige,259,Monthly,Salary,20000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+371,30745084,FRANKLINE,SITONIK ,,724371708,,Male,,A007013299U,2030280606,7866467,,1257099337,1,Kikuyu,129,Monthly,Salary,32318,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+373,25504475,KANINI,DIANNE ,,,,Female,,A007277805W,2002035733,4019728,,1.12E+12,11,Kikuyu,133,Monthly,Salary,18000,0,Support Staff,Administration,Regular,Permanent,1/1/21,Proffesional Staff
+375,234947981,AMUNGA,MILLICENT ,,,,Female,,A014153244C,2022909767,8054924,,1264365845,1,Kikuyu,129,Monthly,Salary,10000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+376,9126858,KAHENYA,ANTHONY ,,,,Male,,A001924661B,67440932,584159,,1123447462,1,Emali,215,Monthly,Salary,30000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+379,27623955,OMONDI,STEPHEN ,,,,Male,,A004824839E,205618936,4317642,,1260017974,1,Kikuyu,129,Monthly,Salary,30000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+385,29094792,KANJANI,LENAH ,,700674577,,Female,,A012101768D,2020504287,7517616,,1264935153,1,Kikuyu,129,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+389,31809593,ANDESO,IMELDA ,,,,Female,,A007427881J,2028525416,14283366,,1265641897,1,Kikuyu,129,Monthly,Salary,22000,0,Teaching Staff,Thogoto Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+390,3109992,NDUNGU,ELIUD ,,,,Male,,A001178019I,Retired,425079,,2147,11,Stima Plaza ,35,Monthly,Salary,25000,0,Director,Director,Regular,Permanent,1/1/21,Proffesional Staff
+394,32611784,EGESA,RODGERS ,,,,Male,,A011652972Z,200530756X,5320299,,1.37E+12,68,Kangemi,137,Monthly,Salary,25000,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+397,11321663,WANGECHI,ZIPORAH ,,,,Female,,A009606310Z,2006818494,5493019,,1.70E+11,68,Upper Hill,17,Monthly,Salary,26000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+403,27311228,OWINO,PETER ,,,,Male,,A006764344A,89496691X,4030896,,1267812788,1,Kikuyu,129,Monthly,Salary,28000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+407,26144372,AWUOR,STEPHEN ,,715277890,,Male,,A009235638X,2009234194,5899165,,1267813008,1,Kikuyu,129,Monthly,Salary,32318,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+410,25934562,WAIRIMU,MARY ,,714513896,,Female,,A005175682Y,2030416849,4525800,,1270148958,68,Kerugoya,10,Monthly,Salary,22000,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+411,24508928,WANJIRU,MAGDALENE ,,725584333,,Female,,A005204069P,873207815,2481217,,1270120875,1,Kikuyu,129,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+414,27447794,MWANGANGI,LUCAS ,,705300430,,Male,,A013206446N,854614915,3861591,,1.12E+12,11,Kikuyu,133,Monthly,Salary,20000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+417,36043792,NYABOE,NANCY ,,724347357,,Female,,A014728657N,2029282958,14355258,,1269997572,1,Westlands,141,Monthly,Salary,10000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+421,27771400,KAROBIA,PETER ,,,,Male,,A011657333W,2029742904,27771400,,1270094998,1,Moi Avenue,100,Monthly,Salary,28000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+422,25515255,OKUKU,CHRISTOPHER ,,723795300,,Male,,A003831407J,232537917,2364048,,1.70E+11,68,Community Branch,17,Monthly,Salary,38000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+427,26264648,NJERI,GRACE ,,,,Female,,A014870704Z,2030176377,14484742,,1271334607,1,Kikuyu,129,Monthly,Salary,10000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+439,13222590,MUIRU,GRACE NJERI,,724179406,,Female,,A014853160W,Retired,7783160,,1270977105,1,Kikuyu,129,Monthly,Salary,13000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+440,25744237,GATHONI,DIANA ,,714397241,,Female,,A005662596J,2030113359,14477825,,1270465554,1,Kikuyu,129,Monthly,Salary,15000,0,Director,Director,Regular,Permanent,1/1/21,Proffesional Staff
+442,33453867,NJERI,ANNA ,,,,Female,,A011090092G,2029906963,14450829,,1.11E+12,68,Kimende,111,Monthly,Salary,20000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+445,33112422,OMONDI,OPIYO ,,,,Male,,A008837710A,203013132X,14479605,,9.80E+11,68,Homa Bay,98,Monthly,Salary,32318,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+446,27465666,NDUKU,HANNAH ,,,,Female,,A006620844R,289017823,3251783,,7665830016,7,Upper Hill,1,Monthly,Salary,20000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+447,38174511,WAMBUI,CATHERINE ,,734206459,,Female,,A014786559Q,203009151X,14473545,,5.70E+11,68,Kikuyu,57,Monthly,Salary,12000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+448,32701445,WANJIKU,JACINTA ,,703879224,,Female,,A013615943Y,2030080703,14473129,,1270834827,1,Kikuyu,129,Monthly,Salary,12000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+449,27219486,WAINAINA,FREDRICK ,,713611763,,Male,,A010043233V,89126891X,3611490,,1271267918,1,Kikuyu,129,Monthly,Salary,32000,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+450,32385167,KWAMBOKA,EDINAH ,,,,Female,,A013239130L,2016729271,14476533,,1270773496,1,Kikuyu,129,Monthly,Salary,20000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+451,5182913,NGUGI,STEPHEN ,,790878783,,Male,,A004168192Z,Retired,6886172,,1265463670,1,Kikuyu,129,Monthly,Salary,20000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+452,25199899,KIPNGENO,JOHN ,,702648319,,Male,,A014881969J,69747092X,14493281,,1271367610,1,Kikuyu,129,Monthly,Salary,20000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+457,32586787,PRISCAH,MAYAKA ,,,,Female,,A013386917U,2017471317,7274190,,1271267403,1,Kikuyu,129,Monthly,Salary,20000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+458,30375561,ROBERT,BENARD ,,,,Male,,A011096212B,2024323815,5163176,,1271268108,1,Kikuyu,129,Monthly,Salary,28000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+463,28165006,RISPER,JANETTA ,,713082182,,Female,,A009323207H,2005360404,5970891,,6.80E+11,68,Kikuyu,57,Monthly,Salary,22000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+466,32391894,VUSHA,MARY ,,702510275,,Female,,A007966338N,2002062605,R-4957066,,1279502177,1,Westlands,141,Monthly,Salary,22000,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+468,25547657,CHERONO,DAMARIS ,,705891183,,Female,,A011823683C,2001800853,14696954,,1279512717,1,Kawangware,254,Monthly,Salary,19999,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+470,22094394,NYAKERARIO,PACIFICAH ,,711447624,,Female,,A009136420I,2031991175,14988964,,1.20E+11,68,Kangemi,137,Monthly,Salary,17000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+471,28839144,CHRISANTUS,BRIAN ,,702382167,,Male,,A007399275O,21218993,14993209,,1279605324,1,Westlands,141,Monthly,Salary,25000,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+472,24617302,WARINGA,ELIZABETH ,,725082915,,Female,,A007588404C,80341829,2508460,,6.90E+11,68,Limuru,69,Monthly,Salary,17000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+473,13564934,WAKIINI,NANCY ,,725791700,,Female,,A004091875Q,56360/81,R0084199,,1279604662,1,River Road,114,Monthly,Salary,17000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+474,22153744,WAMBUI,MARGARET ,,721379913,,Female,,A008076047T,2031997731,4250142,,5.70E+11,68,Kikuyu,57,Monthly,Salary,17000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+475,27966183,ALUOCH,EVERLYNE ,,708845949,,Female,,A013152828F,2025974947,9979293,,1.20E+11,68,Otc,88,Monthly,Salary,17000,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+477,28198529,WAYUA,MILKA ,,705521182,,Female,,A012160315Z,2032053204,7702135,,5.50E+11,68,Westlands,55,Monthly,Salary,17000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+478,32803120,BOCHERE,ESTHER ,,706167366,,Female,,A010175894Y,2032056162,150001961,,1279873361,1,Sarit,141,Monthly,Salary,17000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+479,251086757,NYANCHOKA,LYDIA ,,2.55E+11,,Female,,A015937274Z,39357647,15018005,,1.37E+12,68,Kangemi,137,Monthly,Salary,12000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+480,32088836,MUIRURI,LAWRENCE ,,716309177,,Male,,A009678667Y,2010577261,6087894,,1279953047,1,Kikuyu,129,Monthly,Salary,25000,0,Teaching Staff,Thogoto Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+481,33289004,WANJIRU,MAUREEN ,,705056036,,Female,,A011027976Y,2018000087,8035297,,1213815312,1,Thika,108,Monthly,Salary,18000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+482,34005428,KIPSANG,AMOS ,,748255090,,Female,,A014255243M,2032023869,14963091,,1279506849,1,Kikuyu,129,Monthly,Salary,25000,0,Teaching Staff,Thogoto Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+483,33288503,WANJIKU,ROSELYNE ,,705409640,,Female,,A011351059G,2032023985,14996482,,1280214759,1,Kikuyu,129,Monthly,Salary,18000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+484,32034523,GATHIGA,WINNIE ,,795142543,,Female,,A011039001Z,2007655105,5112364,,1.11E+12,11,Karatina,28,Monthly,Salary,23000,0,Teaching Staff,Thogoto Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+485,24623930,OGELLO,SAMSON OMONDI,,725040038,,Male,,A003595904Y,373019912,3224236,,3.10E+11,68,Kenyatta ave Nakuru,31,Monthly,Salary,32318,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+486,30338104,KINYUA,JAMES ,,742292873,,Male,,A007019624R,2032737058,15323130,,1280023856,1,Kikuyu,129,Monthly,Salary,27000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+487,14494721,NANDAKO,EDINAH ,,720075925,,Female,,A002650067R,4946825,3913239,,1.12E+12,11,Moi Avenue,14,Monthly,Salary,25000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+488,13747961,NYABOKE,BATHSHEBA ,,723845089,,Female,,A003059437U,2009734763,7026908,,6.30E+11,68,Kawangware,63,Monthly,Salary,25000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+489,30045802,MUGURE,RUTH ,,703852249,,Female,,A011174812Y,2009734763,7026902,,5.70E+11,68,Kikuyu,57,Monthly,Salary,18000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+490,25940527,WAFULA,YONAH ,,768128841,,Male,,A005877171N,774251,6225098,,2.55E+11,99,M-PESA,99999,Monthly,Salary,10000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+496,29882790,KENNEDY,JUMA ,,,,Male,,A009646893V,2031678972,7846080,,1281293695,1,Kikuyu,129,Monthly,Salary,15000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+498,32888923,ADHIAMBO,MARY ,,,,Female,,A015908071I,2032457081,15305581,,1281509477,1,Kikuyu,129,Monthly,Salary,18000,0,Teaching Staff,Thogoto Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+499,13773929,WAMBUI,LUCY ,,,,Female,,A008693156F,2032474897,15302879,,2.60E+11,68,Kangemi,137,Monthly,Salary,17000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+500,13409029,MBOGO,CHARLES ,,,,Male,,A008322381R,2027525734,3334635,,1239719227,1,Gatundu,214,Monthly,Salary,19999,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+501,22160906,DECLAN,MOSES ,,,,Male,,A003030054X,986358924,2179109,,1149316411,1,Moi Avenue,100,Monthly,Salary,19999,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+502,22061130,MWANGI,JOSEPH ,,,,Male,,A003386860C,547123922,1615060,,1.30E+11,68,Nakuru,13,Monthly,Salary,32318,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+503,22751357,AHOLA,JOSEPH ,,,,Male,,A0036259014,66420192X,1848522,,1.34E+12,68,Kangemi,137,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+504,29373713,MAINA,FRANCIS ,,,,Male,,A010130854A,2023604061,7726589,,1.12E+12,11,Kitengela,64,Monthly,Salary,26377,0,Support Staff,Administration,Regular,Permanent,1/1/21,Proffesional Staff
+505,36478398,WANYONYI,EVANS ,,,,Male,,A015004371H,203052634,14551884,,1275183395,1,Kakuma,333,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+506,20678260,SALANO,ELIZABETH ,,,,Female,,A006083766W,932447813,3228970,,3.00E+11,68,Eldoret,30,Monthly,Salary,18000,0,Support Staff,Administration,Regular,Permanent,1/1/21,Proffesional Staff
+507,21838344,NJOKI,SUSAN ,,,,Female,,A009627495T,372386822,3023477,,5.70E+11,68,Kikuyu,57,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+508,25795597,IKAA,IMMACULATE ,,,,Female,,A005176929W,2002951351,15310570,,1.05E+12,68,Malaba Town,105,Monthly,Salary,28000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+509,27302743,MAINA,JAMES ,,,,Male,,A016063404A,2011091606,6287917,,1.11E+12,11,Kerugoya,12,Monthly,Salary,30000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+510,28737291,KIPLANGAT,ROP ,,,,Male,,,2018938065,6360846,,1213759265,1,Kikuyu,129,Monthly,Salary,5645.16129,0,Teaching Staff,Thogoto Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+511,33873871,CHERONO,ZAINA ,,743595094,,Female,,A016084353Z,1000001,1000001,,1267503750,1,Kikuyu,129,Monthly,Salary,10000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+512,32541159,LANGAT,LEONARD ,,,,Male,,A009290280R,2026979465,15420806,,1282735411,1,Kikuyu,129,Monthly,Salary,25000,0,Teaching Staff,Thogoto Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+513,30737844,ANYANGO,JACKLINE ,,,,Female,,A013050216P,2015760526,9639419,,1282717642,1,Kikuyu,129,Monthly,Salary,25000,0,Teaching Staff,Thogoto Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+515,31848926,WANJIKU,ANN ,,,,Female,,A011291616Y,2018538564,7892075,,6.90E+11,68,Limuru,69,Monthly,Salary,20000,0,Teaching Staff,Thogoto ECD,Regular,Permanent,1/1/21,Proffesional Staff
+516,32620486,WANJIRU,MARGARET ,,,,Female,,A009553112J,2011147739,6138429,,5.70E+11,68,Kikuyu,57,Monthly,Salary,20000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+517,8779978,THAIRO,ESTHER ,,,,Female,,A001677037A,RETIRED,222925,,1.20E+11,68,Tom Mboya,12,Monthly,Salary,30000,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+518,22869602,NJERI,TERESIA ,,727951842,,Female,,A012090109V,2032964978,15422394,,1234682753,1,Karen,202,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+519,30155302,KAMUHU,JOHN ,,,,Male,,A011287089E,2018087786,9719943,,1.60E+11,68,Ridgeways,134,Monthly,Salary,19782.75,0,Teaching Staff,87 Middle Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+520,28597390,GICHUHI,DAVID ,,711733616,,Male,,A009201511S,2018334976,14278247,,1.31E+12,68,Eldama Ravine,131,Monthly,Salary,13188.5,0,Teaching Staff,87 Upper Primary,Regular,Permanent,1/1/21,Proffesional Staff
+521,35109087,TONJE,WILLY ,,719167814,,Male,,A011226169T,2032989547,15422640,,1.39E+12,68,Kabarnet,139,Monthly,Salary,26377,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+522,12487504,GATUNDU,STANLEY ,,722673164,,Male,,A003992812U,400158922,1791511,,20190080539,68,Fourways,2,Monthly,Salary,15637.74194,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+523,5252241,WANJIKU,ALICE ,,721229848,,Female,,A003563792F,322991/81I,4,,1.68E+12,68,Kiserian Sub Branch,168,Monthly,Salary,38260,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+524,29257364,WAMBUI,DIANA ,,710917242,,Female,,A006728706E,2015915595,4323154,,3.50E+11,68,Knut House,35,Monthly,Salary,30000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+525,13237467,OCHOKO,TIMOTHY OBOO,,722496320,,Male,,A002708733B,2009141442,1258217,,1262785022,1,Gikomba,257,Monthly,Salary,32318,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+526,33186732,KHAHONJERI,DAVID ,,714792203,,Female,,A010189447U,2019141858,15422614,,7.77E+12,68,Dagoretti,169,Monthly,Salary,12763.06452,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+527,28400491,ODUOR,ISAAC OKOYO,,790795635,,Male,,A006131799S,2007212447,5560305,,1119837707,1,Ugunja,242,Monthly,Salary,12763.06452,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
+528,12668915,WANJIRU,ESTHER ,,725634783,,Female,,,Retired,5,,5,99,M-PESA,999,Monthly,Salary,10000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+529,5194498,WAMUHU,SUSAN ,,726903809,,Female,,A002465141N,503642819,249224,,1.20E+11,68,Kikuyu,57,Monthly,Salary,10000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+530,28008105,WANIKU,MAUREEN ,,715377916,,Female,,A016148105H,1000002,1000002,,1283272822,1,Kikuyu,129,Monthly,Salary,5000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+531,27585943,NJOGU,ABASI ,,740844545,,Male,,A015958611C,2032598947,15322780,,5.70E+11,68,Kikuyu,57,Monthly,Salary,18000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+532,22913647,MBITHI,PATRICK ,,723340381,,Male,,A003129941R,2025116897,3561193,,3.50E+11,68,Knut House,35,Monthly,Salary,18000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+533,37506494,MUTHONI,RACHEAL ,,710896681,,Female,,A016148093Y,1000003,1000003,,1283271990,1,Kikuyu,129,Monthly,Salary,5000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+534,29579221,WARII,EVALYNE ,,724656080,,Female,,A006930248W,2032960191,15421758,,6.40E+11,68,Westlands,55,Monthly,Salary,5322.580645,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+535,29311363,MIDEGA,SHEILA ,,705540767,,Female,,A014703255T,203297858X,15423308,,1282806572,1,Westlands,141,Monthly,Salary,3290.322581,0,Teaching Staff,87 Lower Primary,Regular,Permanent,1/1/21,Proffesional Staff
+536,31107979,KIMANI,MILKA NJERI,,,,Female,,A009945154L,2012455535,5734130,,1252594542,1,Moi Avenue,100,Monthly,Salary,5000,0,Teaching Staff,87 ECD,Regular,Permanent,1/1/21,Proffesional Staff
+537,35230933,WANGARI,GIDEON MUTISYA,,,,Male,,A016057047Q,2033066379,15435562,,1282958135,1,Westlands,141,Monthly,Salary,4516.129032,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+540,30129766,MUSHISHO,DANCUN WACHIRA,,719219615,,Male,,A016129332M,203314620X,15445179,,1283286831,1,Kikuyu,129,Monthly,Salary,10000,0,Support Staff,Thogoto Support,Regular,Permanent,1/1/21,Support Staff
+541,25511000,NYAEGA,VANICE NYANG'ARA,,,,Female,,A006452997I,52247821,R-2679931,,707063598,99,M-PESA,999,Monthly,Salary,10000,0,Support Staff,87 Support,Regular,Permanent,1/1/21,Support Staff
+2001,33302107,KERICH,SHARON CHEROTICH,,,,Female,,A008917974X,2030161703,14483524,,1173593276,1,Kencom,94,Monthly,Salary,20000,0,Teaching Staff,Senior,Regular,Permanent,1/1/21,Proffesional Staff
