@@ -41,7 +41,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-                <button type="submit" name="submit" value="Update Profile" class="btn btn-indigo">Save changes</button>
+                <button type="submit" name="submit" value="Update Profile" class="btn btn-az-secondary">Save changes</button>
             </div>
             </form>
         </div>
@@ -49,7 +49,7 @@
 </div><!-- modal -->
 
 <!--modal for changing password -->
-<div id="change_password" class="modal">
+<div id="change_password_modal" class="modal">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content modal-content-demo">
             <div class="modal-header">
@@ -85,7 +85,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-                    <button type="submit" name="submit" value="Update Profile" class="btn btn-indigo">Change Password</button>
+                    <button type="submit" name="submit" value="Update Profile" class="btn btn-az-secondary">Change Password</button>
                 </div>
             </form>
         </div>
@@ -94,8 +94,8 @@
 
 <div class="az-footer">
     <div class="container-fluid">
-        <span>&copy; 2024 TRT Manufacturing</span>
-        <span>Powered by: Microvision Innovations Ltd</span>
+        <span>&copy; <?php echo date('Y'); ?> TRT Manufacturing Ltd</span>
+        <span>Powered by: <a href="https://microvision.co.ke/" target="_blank" >Microvision Innovations Ltd </a></span>
     </div><!-- container -->
 </div><!-- az-footer -->
 </div><!-- az-content -->

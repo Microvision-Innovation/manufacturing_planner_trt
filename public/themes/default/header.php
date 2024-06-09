@@ -19,10 +19,10 @@ Assets::add_js(array('lib/moment/min/moment.min.js','lib/jquery-ui/ui/widgets/da
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Meta -->
-    <meta name="description" content="TB Allocation Tool">
+    <meta name="description" content="TRT Manufacturing Planner">
     <meta name="author" content="Edwin Ombego, ombego@gmail.com">
 
-    <title>TRT Planner<?php echo (ISSET($page_title))?" | ".$page_title:""; ?></title>
+    <title>TRT Planner <?php echo (ISSET($page_title))?" | ".$page_title:""; ?></title>
 
     <!-- css files -->
     <link rel="icon" href="<?php echo Template::theme_url('images/favicon.ico');?>" type="image/x-icon" />

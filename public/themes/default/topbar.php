@@ -63,8 +63,8 @@
                     </div><!-- az-header-profile -->
 
                     <a href="<?php echo base_url(); ?>user_accounts/profile" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
-                    <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
-                    <a href="" class="dropdown-item"><i class="typcn typcn-key"></i> Activity Logs</a>
+                    <a href="#modaldemo8" class="dropdown-item modal-effect" data-toggle="modal" data-effect="effect-just-me"><i class="typcn typcn-edit"></i> Edit Profile</a>
+                    <a href="#change_password_modal" class="dropdown-item modal-effect" data-toggle="modal" data-effect="effect-just-me"><i class="typcn typcn-key"></i> Change Password</a>
                     <?php if(has_permission('Site.Content.View')): ?>
                         <a href="<?php echo base_url(); ?>admin" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Admin Panel</a>
                     <?php endif; ?>
