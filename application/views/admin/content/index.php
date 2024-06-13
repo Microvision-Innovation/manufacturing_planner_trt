@@ -1,6 +1,6 @@
-<h2>Welcome to Vision Web-ERP Admin Panel</h2>
+<h2>Welcome to the TRT Manufacturing Planner Admin Panel</h2>
 
-<p>As of Vision Payroll Web-ERP V 2.1 the administration panel has been developed to enable.</p>
+<p>As of TRT Planner V 2.1 the administration panel has been developed to enable.</p>
 
 <p>
 	<ul>

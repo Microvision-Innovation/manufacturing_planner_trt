@@ -21,40 +21,35 @@
     .padding-large td {
         padding: 16px;
     }
+    <?php foreach($all_schedule_statuses as $als): ?>
+    .<?php echo $als->color_class; ?> {
+        background-color: <?php echo $als->color_code; ?>;
+        color: <?php echo $als->text_color; ?>;
+    }
+    <?php endforeach; ?>
     .bg-free {
-        background-color: rgba(107, 0, 238, 0.08);
-        color: purple;
+        background-color: #F8F4FE;
+        color: #6200EE;
     }
-    .bg-noprogress {
-        background-color: rgba(7, 63, 97, 0.25);
-        color: darkslategrey;
-    }
-    .bg-workprogress {
-        background-color: rgba(245, 179, 49, 0.26);
-        color: #b58900;
-    }
-    .bg-complete {
-        background-color: #F1FAF7;
-        color: darkslategray;
-    }
-    .bg-onhold {
-        background-color: rgba(255, 108, 33, 0.24);
-        color: saddlebrown;
-    }
-    .bg-dispensed {
-        background-color: rgba(75, 123, 250, 0.31);
+    .bg-created {
+        background-color: #F9FAFB;
+        color: #00263E;
     }
     .clickable-cell{
         cursor:pointer;
     }
 </style>
-
+<script>
+    function goToLink(url) {
+        window.open(url, '_self'); // Opens the link in a new tab
+    }
+</script>
 <div class="az-content az-content-dashboard-four">
     <div class="media media-dashboard">
         <div class="media-body">
             <div class="az-content-header">
                 <div>
-                    <h6 class="az-content-title tx-18 mg-b-5">Manufacturing Planner</h6>
+                    <h6 class="az-content-title tx-18 mg-b-5">TRT Manufacturing Planner</h6>
                     <p class="az-content-text tx-13 mg-b-0">Hi <?php echo $current_user->display_name; ?>, welcome back! Here's your planner summary.</p>
                 </div>
 
@@ -62,13 +57,13 @@
                     <div class="media">
                         <div class="media-body">
                             <label>Start Date</label>
-                            <h6>Oct 10, 2018</h6>
+                            <h6><?php echo date('M d, Y',strtotime($start_date)); ?></h6>
                         </div><!-- media-body -->
                     </div><!-- media -->
                     <div class="media">
                         <div class="media-body">
                             <label>End Date</label>
-                            <h6>Oct 23, 2018</h6>
+                            <h6><?php echo date('M d, Y',strtotime($end_date)); ?></h6>
                         </div><!-- media-body -->
                     </div><!-- media -->
                     <div class="media">
@@ -136,23 +131,29 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php while($display_days >0): ?>
+                            <?php while($display_days >0):  ?>
                                 <tr class="padding-medium">
-                                    <td rowspan="2" valign="center"><b><?php echo date('l', strtotime($start_date)); ?></b><br><small class="text-muted"><?php echo date('d M Y', strtotime($start_date)); ?></small></td>
+                                    <td rowspan="2" valign="center">
+                                    <!--Display for the days while adding an extra day to the selected date-->
+                                        <b><?php echo date('l', strtotime($start_date)); ?></b><br>
+                                        <small class="text-muted"><?php echo date('d M Y', strtotime($start_date)); ?></small>
+                                    </td>
                                     <td>Day</td>
                                     <?php foreach($job_lines  as $row): ?>
-                                    <?php if(ISSET($area_schedule)): ?>
+                                    <?php if(ISSET($area_schedules)): ?>
                                     <td>
-                                        <table width="100%" border="0">
-                                            <tr>
-                                                <?php $num==0;
-                                                    foreach($area_schedule as $as):
-                                                    if($as->schedule_date==$start_date and $as->job_line_id==$row->id AND $as->shift_id==1): $num++;
+                                        <table width="100%" height="70px" border="0">
+
+                                                <?php $num=0;
+                                                    foreach($area_schedules as $as):
+                                                    if($as->schedule_date==date('Y-m-d', strtotime($start_date)) AND $as->job_line_id==$row->id AND $as->shift_id==1): $num++;
                                                     //todo: figure out the status and match it with the correct color coding
                                                 ?>
-                                                    <td class="bg-complete clickable-cell" height="70px" data-target="#txtResult" data-toggle="modal" onclick="htmlData('<?php echo base_url(); ?>planner/schedule_modal','shift_id=1&line_id=<?php echo $row->id; ?>&schedule_date=<?php echo $start_date; ?>')">
-                                                       <?php echo $as->job_number; ?><br><small><?php echo $as->description; ?></small>
-                                                    </td>
+                                                    <tr>
+                                                        <td class="<?php echo ($as->color_class)?$as->color_class:"bg-created"; ?> clickable-cell" data-target="#txtResult" data-toggle="modal" onclick="htmlData('<?php echo base_url(); ?>planner/schedule_modal','shift_id=1&line_id=<?php echo $row->id; ?>&schedule_date=<?php echo $start_date; ?>')">
+                                                           <?php echo $as->job_number; ?> <!-- <br><small><?php //echo $as->description; ?></small> -->
+                                                        </td>
+                                                    </tr>
                                                 <?php
                                                     endif;
                                                     endforeach;
@@ -160,9 +161,9 @@
                                                     if($num==0):
                                                     $num=0;
                                                 ?>
-                                                    <td class="bg-free" height="70px">FREE</td>
+                                            <tr> <td class="bg-free" data-target="#txtResult" data-toggle="modal" onclick="htmlData('<?php echo base_url(); ?>planner/schedule_modal','shift_id=1&line_id=<?php echo $row->id; ?>&schedule_date=<?php echo $start_date; ?>')">FREE</td></tr>
                                                 <?php endif; ?>
-                                            </tr>
+
 
                                         </table>
                                     </td>
@@ -180,18 +181,20 @@
                                 <tr class="padding-medium">
                                     <td>Night</td>
                                     <?php foreach($job_lines  as $row): ?>
-                                        <?php if(ISSET($area_schedule)): ?>
+                                        <?php if(ISSET($area_schedules)): ?>
                                             <td>
-                                                <table width="100%" border="0">
-                                                    <tr>
-                                                        <?php $num==0;
-                                                        foreach($area_schedule as $as):
-                                                            if($as->schedule_date==$start_date and $as->job_line_id==$row->id AND $as->shift_id==2): $num++;
+                                                <table width="100%" height="70px" border="0">
+
+                                                        <?php $num=0;
+                                                        foreach($area_schedules as $as):
+                                                            if($as->schedule_date==date('Y-m-d', strtotime($start_date)) and $as->job_line_id==$row->id AND $as->shift_id==2): $num++;
                                                                 //todo: figure out the status and match it with the correct color coding
-                                                                ?>
-                                                                <td class="bg-complete clickable-cell" height="70px" data-target="#txtResult" data-toggle="modal" onclick="htmlData('<?php echo base_url(); ?>planner/schedule_modal','')">
-                                                                    <?php echo $as->job_number; ?><br><small><?php echo $as->description; ?></small>
+                                                        ?>
+                                                            <tr>
+                                                                <td class="<?php echo ($as->color_class)?$as->color_class:"bg-created"; ?> clickable-cell" data-target="#txtResult" data-toggle="modal" onclick="htmlData('<?php echo base_url(); ?>planner/schedule_modal','shift_id=2&line_id=<?php echo $row->id; ?>&schedule_date=<?php echo $start_date; ?>')">
+                                                                    <?php echo $as->job_number; ?><!-- <br><small><?php //echo $as->description; ?></small> -->
                                                                 </td>
+                                                            </tr>
                                                             <?php
                                                             endif;
                                                         endforeach;
@@ -199,9 +202,9 @@
                                                         if($num==0):
                                                             $num=0;
                                                             ?>
-                                                            <td class="bg-free" height="70px">FREE</td>
+                                                            <tr><td class="bg-free" data-target="#txtResult" data-toggle="modal" onclick="htmlData('<?php echo base_url(); ?>planner/schedule_modal','shift_id=2&line_id=<?php echo $row->id; ?>&schedule_date=<?php echo $start_date; ?>')">FREE</td></tr>
                                                         <?php endif; ?>
-                                                    </tr>
+
 
                                                 </table>
                                             </td>
@@ -210,7 +213,7 @@
                                             <td>
                                                 <table width="100%" border="0">
                                                     <tr>
-                                                        <td class="bg-free" height="70px">FREE</td>
+                                                        <td class="bg-free" height="70px" data-target="#txtResult" data-toggle="modal" onclick="htmlData('<?php echo base_url(); ?>planner/schedule_modal','shift_id=2&line_id=<?php echo $row->id; ?>&schedule_date=<?php echo $start_date; ?>')">FREE</td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -265,9 +268,9 @@
                             <div class="tab tab-content">
                                 <?php $num=0; foreach($job_types as $row): ?>
                                 <div id="tabJobArea_<?php echo $row->id; ?>" class="tab-pane <?php echo ($num==0)?'active show':'';?>">
-                                    <div class="list-group">
+                                    <div class="list-group" >
                                         <?php foreach($job_areas  as $row2): if($row->id == $row2->job_type_id): ?>
-                                        <div class="list-group-item">
+                                        <div class="list-group-item" onclick="goToLink('<?php echo base_url(); ?>planner/index?job_area=<?php echo $row2->id; ?>')">
                                             <div class="event-indicator bg-primary"></div>
                                             <label><?php echo $row2->symbol; ?></label>
                                             <h6><?php echo $row2->job_area_name; ?></h6>
@@ -289,3 +292,32 @@
 
 
 <div id="txtResult" class="modal hide effect-scale" role="dialog" aria-labelledby="myModalLabel" > </div>
+
+<script src="<?php echo Template::theme_url('js/chart.flot.sampledata.js');?>"></script>
+<script>
+    $(function(){
+        'use strict'
+
+        // Datepicker found in left sidebar of the page
+        var highlightedDays = ['2018-5-10','2018-5-11','2018-5-12','2018-5-13','2018-5-14','2018-5-15','2018-5-16'];
+        var date = new Date();
+
+        $('.fc-datepicker').datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            dateFormat: 'yy-mm-dd',
+            beforeShowDay: function(date) {
+                var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+                for (var i = 0; i < highlightedDays.length; i++) {
+                    if($.inArray(y + '-' + (m+1) + '-' + d,highlightedDays) != -1) {
+                        return [true, 'ui-date-highlighted', ''];
+                    }
+                }
+                return [true];
+            }
+        });
+
+
+
+    });
+</script>

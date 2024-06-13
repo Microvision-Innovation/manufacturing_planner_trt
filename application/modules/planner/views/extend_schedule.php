@@ -7,24 +7,20 @@ error_reporting(E_ALL);
     <div class="row">
         <div class="col-md-6">
             <label >Job Area</label>
-            <select class="form-control" required>
+            <select class="form-control" name="job_area_id" id="job_area_id" required>
                 <option label="Select Job Area"></option>
-                <option value="January">Home Care (Area 1)</option>
-                <option value="February">Personal Care (Area 1)</option>
-                <option value="March">Aerosol 1 (Area 3)</option>
-                <option value="April">Personal care (Area 2)</option>
-                <option value="May">Home Care Bulk (Area 2)</option>
+                <?php foreach($job_areas as $ja): $selected = ($ja->id == $extension_job_area_id)?"selected":""; ?>
+                <option value="<?php echo $ja->id; ?>" <?php echo $selected; ?>><?php echo $ja->job_area_name; ?></option>
+                <?php endforeach; ?>
             </select>
         </div><!-- col -->
         <div class="col-md-6">
-            <label>Tank</label>
-            <select class="form-control">
+            <label>Tank/Line</label>
+            <select class="form-control" name="line_id" id="line_id">
                 <option label="Choose Tank"></option>
-                <option value="January">TK4 (1000Kg)</option>
-                <option value="February">TK5 (1000Kg)</option>
-                <option value="March">TK6 (1000Kg)</option>
-                <option value="April">TK7 (1000Kg)</option>
-                <option value="May">TK8 (1000Kg)</option>
+                <?php foreach($lines as $l): $selected = ($l->id == $extension_line_id)?"selected":""; ?>
+                    <option value="<?php echo $l->id; ?>" <?php echo $selected; ?>><?php echo $l->line_name; ?></option>
+                <?php endforeach; ?>
             </select>
         </div><!-- col -->
     </div><!-- row -->
@@ -34,13 +30,13 @@ error_reporting(E_ALL);
             <label>Schedule Date</label>
             <div class="row">
                 <div class="col-sm-6">
-                    <input type="date" class="form-control" placeholder="" required="">
+                    <input type="date" class="form-control" name="extension_date" id="extension_date" placeholder="" required="">
                 </div><!-- col -->
                 <div class="col-sm-6 mg-t-10 mg-sm-t-0">
-                    <select class="form-control select2-no-search">
+                    <select class="form-control select2-no-search" name="shift_id" id="shift_id">
                         <option label="Choose Shift"></option>
-                        <option value="2018">Day Shift</option>
-                        <option value="2019">Night Shift</option>
+                        <option value="1">Day Shift</option>
+                        <option value="2">Night Shift</option>
                     </select>
                 </div><!-- col -->
             </div><!-- row -->

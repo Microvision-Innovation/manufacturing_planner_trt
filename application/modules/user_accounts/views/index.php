@@ -152,7 +152,7 @@
                             <label class="form-label mg-b-0 pull-right" for="role">User Level</label>
                         </div>
                         <div class="col-md-5 mg-t-5 mg-md-t-0">
-                            <select name="role" required="required" id="role" class="form-control select2-no-search" style="width: 100%;">
+                            <select name="role" required="required" id="role" class="form-control" style="width: 100%;">
                                 <option selected disabled value="">Select User level</option>
                                 <?php foreach($roles as $role):?>
                                     <option value="<?php echo $role->role_id; ?>"><?php echo $role->role_name; ?></option>

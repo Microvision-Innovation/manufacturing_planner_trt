@@ -17,7 +17,7 @@ class Lines_model extends MY_Model {
 
     public function get_lines()
     {
-        return $this->db->query("SELECT bf_vision_job_lines.*,bf_vision_job_areas.job_area_name as job_area_name,bf_vision_job_types.job_type_name as job_type_name,c.display_name as created_name,m.display_name as modified_name FROM bf_vision_job_lines 
+        return $this->db->query("SELECT bf_vision_job_lines.*,bf_vision_job_areas.job_area_name as job_area_name,bf_vision_job_areas.job_type_id,bf_vision_job_types.job_type_name as job_type_name,c.display_name as created_name,m.display_name as modified_name FROM bf_vision_job_lines 
                                         LEFT JOIN bf_vision_job_areas ON bf_vision_job_lines.job_area_id = bf_vision_job_areas.id 
                                         LEFT JOIN bf_vision_job_types ON bf_vision_job_areas.job_type_id = bf_vision_job_types.id 
                                         LEFT JOIN bf_users c ON c.id=bf_vision_job_lines.created_by

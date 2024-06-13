@@ -9,18 +9,18 @@
             <p class="mg-b-20">Job Types are linked to job areas and lines.</p>
             <form class="form-horizontal" method="post" name="new_job_type" id="new_job_type" action="<?php echo current_url(); ?>">
                 <div class="row">
-                    <div class="col-md-8"></div>
+                    <div class="col-md-7"></div>
                     <div class="col-md-3">
                         <input type="text" class="form-control" required placeholder="Job Type Name" name="job_type_name" required="">
                         <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" >
                     </div><!-- col -->
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <button class="btn btn-primary btn-block" type="submit" name="submit" value="submit"><i class="fa fa-plus"></i> Add Job Type</button>
                     </div><!-- col -->
                 </div>
             </form>
             <div class="card card-table-two">
-                        <table id="datatable1" class="display responsive  nowrap">
+                        <table class="table table-striped table-hover table-condensed">
                             <thead>
                             <tr>
                                 <th >#</th>
@@ -52,7 +52,7 @@
 
             </div>
 
-            <div class="mg-lg-b-30"></div>
+
 
         </div><!-- az-content-body -->
     </div>
