@@ -8,13 +8,18 @@
         <ul class="nav">
             <li class="nav-label">Main Menu</li>
             <li class="nav-item">
-                <a href="<?php echo base_url(); ?>" class="nav-link"><i class="typcn typcn-clipboard"></i>Dashboard</a>
+                <a href="#" class="nav-link"><i class="typcn typcn-clipboard"></i>Dashboard</a>
             </li><!-- nav-item -->
-            <?php //if(has_permission('Planner.Planner_calendar.View')): ?>
+            <?php if(has_permission('Planner.Planner_calendar.View')): ?>
             <li class="nav-item <?php echo $this->uri->segment(1) == "planner" ? "active" : ""; ?>">
                 <a href="<?php echo base_url(); ?>planner" class="nav-link"><i class="typcn typcn-calendar-outline"></i>Planner</a>
             </li><!-- nav-item -->
-            <?php //endif; ?>
+            <?php endif; ?>
+            <?php if(has_permission('Planner.Data_sheet.View')): ?>
+                <li class="nav-item <?php echo $this->uri->segment(1) == "data_sheet" ? "active" : ""; ?>">
+                    <a href="<?php echo base_url(); ?>data_sheet" class="nav-link"><i class="typcn typcn-export"></i>Data Sheet</a>
+                </li><!-- nav-item -->
+            <?php endif; ?>
             <?php if(has_permission('Planner.Mappings.View')): ?>
             <li class="nav-item <?php echo $this->uri->segment(1) == "mapping" ? "active" : ""; ?>">
                 <a href="" class="nav-link with-sub"><i class="typcn typcn-cog"></i>Mapping</a>

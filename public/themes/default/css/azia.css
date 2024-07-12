@@ -331,7 +331,8 @@ button::-moz-focus-inner,
 input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
-  padding: 0; }
+  padding: 0;
+  height: 20px}
 
 input[type="date"],
 input[type="time"],
@@ -7521,8 +7522,8 @@ table.dataTable {
         .ui-datepicker .ui-datepicker-calendar td a {
           transition: none; } }
     .ui-datepicker .ui-datepicker-calendar td a:hover {
-      background-color: #fff;
-      color: #494c57; }
+      background-color: #487aefd1;
+      color: #ecedf2; }
     .ui-datepicker .ui-datepicker-calendar .ui-datepicker-today a, .ui-datepicker .ui-datepicker-calendar .ui-datepicker-today a:hover, .ui-datepicker .ui-datepicker-calendar .ui-datepicker-today a:focus {
       background-color: #007bff;
       color: #fff; }
@@ -11731,7 +11732,8 @@ textarea.parsley-success:focus {
     font-size: 13px;
     font-weight: 500;
     color: #343640;
-    text-transform: uppercase; }
+    /*text-transform: uppercase; */
+  }
     .az-nav-line-chat .nav-link:hover, .az-nav-line-chat .nav-link:focus, .az-nav-line-chat .nav-link:active {
       outline: none; }
     .az-nav-line-chat .nav-link + .nav-link {
@@ -12307,9 +12309,9 @@ textarea.parsley-success:focus {
     text-align: center; }
     @media (min-width: 992px) {
       .az-contact-info-body .media-icon {
-        width: 100px; } }
+        width: 50px; } }
   .az-contact-info-body .media-body {
-    margin-left: 30px; }
+    margin-left: 20px; }
     @media (min-width: 992px) {
       .az-contact-info-body .media-body {
         display: flex; } }

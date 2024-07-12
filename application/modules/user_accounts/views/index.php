@@ -14,7 +14,7 @@
         </div>
         <?php if(ISSET($users) and $users): ?>
         <div class="card card-table-two">
-            <table id="datatable1" class="display responsive table table-condensed">
+            <table id="datatable1" width="100%" class="display responsive table table-condensed">
                 <thead>
                 <tr>
                     <th>#</th>

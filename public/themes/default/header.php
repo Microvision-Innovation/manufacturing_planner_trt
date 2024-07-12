@@ -1,14 +1,14 @@
 <?php
 
-Assets::add_css(array( 'lib/fontawesome-free/css/all.min.css','lib/ionicons/css/ionicons.min.css','lib/typicons.font/typicons.css','lib/fullcalendar/fullcalendar.min.css','lib/morris.js/morris.css','lib/datatables.net-dt/css/jquery.dataTables.min.css','lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css','lib/select2/css/select2.min.css','lib/lightslider/css/lightslider.min.css','lib/line-awesome/css/line-awesome.min.css','lib/quill/quill.snow.css','lib/quill/quill.bubble.css','css/azia.css'));
+Assets::add_css(array( 'lib/fontawesome-free/css/all.min.css','lib/ionicons/css/ionicons.min.css','lib/typicons.font/typicons.css','lib/morris.js/morris.css','lib/datatables.net-dt/css/jquery.dataTables.min.css','lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css','lib/select2/css/select2.min.css','lib/lightslider/css/lightslider.min.css','lib/line-awesome/css/line-awesome.min.css','lib/quill/quill.snow.css','lib/quill/quill.bubble.css','css/azia.css'));
 
 //Assets::add_js(array('lib/moment/min/moment.min.js','lib/jquery-ui/ui/widgets/datepicker.js','lib/bootstrap/js/bootstrap.bundle.min.js','lib/ionicons/ionicons.js','lib/fullcalendar/fullcalendar.min.js','lib/select2/js/select2.full.min.js','js/azia.js',
 //'js/app-calendar-events.js','js/app-calendar.js','ajax_req.js'));
 
 //Assets::add_css(array( 'lib/fontawesome-free/css/all.min.css','lib/ionicons/css/ionicons.min.css','lib/typicons.font/typicons.css','lib/morris.js/morris.css','lib/datatables.net-dt/css/jquery.dataTables.min.css','lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css','lib/select2/css/select2.min.css','lib/lightslider/css/lightslider.min.css','lib/line-awesome/css/line-awesome.min.css','lib/quill/quill.snow.css','lib/quill/quill.bubble.css','css/azia.css','css/main.css','css/smart_wizard.min.css','css/smart_wizard_theme_arrows.min.css'));
-Assets::add_js(array('lib/moment/min/moment.min.js','lib/jquery-ui/ui/widgets/datepicker.js','lib/bootstrap/js/bootstrap.bundle.min.js','lib/ionicons/ionicons.js','lib/fullcalendar/fullcalendar.min.js','lib/datatables.net/js/jquery.dataTables.min.js','lib/datatables.net-dt/js/dataTables.dataTables.min.js',
+Assets::add_js(array('lib/moment/min/moment.min.js','lib/jquery-ui/ui/widgets/datepicker.js','lib/bootstrap/js/bootstrap.bundle.min.js','lib/ionicons/ionicons.js','lib/datatables.net/js/jquery.dataTables.min.js','lib/datatables.net-dt/js/dataTables.dataTables.min.js',
     'lib/datatables.net-responsive/js/dataTables.responsive.min.js','lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js','lib/select2/js/select2.min.js','lib/jquery.maskedinput/jquery.maskedinput.js','lib/jquery-steps/jquery.steps.min.js',
-    'lib/parsleyjs/parsley.min.js','js/azia.js','ajax_req.js','js/main.js','js/jquery.smartWizard.min.js','lib/tinymce/tinymce.min.js'));
+    'lib/parsleyjs/parsley.min.js','js/azia.js','ajax_req.js','js/jquery.smartWizard.min.js','lib/tinymce/tinymce.min.js'));
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ Assets::add_js(array('lib/moment/min/moment.min.js','lib/jquery-ui/ui/widgets/da
 
     <script src='<?php echo Template::theme_url('lib/jquery/jquery.min.js'); ?>'></script>
     <script src="<?php echo Template::theme_url('js/jquery_excel.js');?>"></script>
-    <script >
+    <script>
         $(document).ready(function() {
             $("#btnExport").click(function(e) {
                 e.preventDefault();

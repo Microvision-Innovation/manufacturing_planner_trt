@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 ?>
-<div class="modal-dialog modal-lg" role="modal" xmlns="http://www.w3.org/1999/html">
+<div class="modal-dialog modal-lg" role="modal" >
     <div class="modal-content modal-content-demo">
         <div class="modal-header">
             <h6 class="modal-title">Scheduler</h6>
@@ -19,14 +19,14 @@ error_reporting(E_ALL);
                             <?php  if(ISSET($schedules)): $num=0; foreach($schedules as $row): ?>
                             <div class="az-contact-item <?php echo($num==0)?"selected":""; ?>" data-toggle="tab" data-target="#tabCont<?php echo $row->id; ?>">
                                 <div class="az-contact-body">
-                                    <h6><?php echo $row->job_number; ?></h6>
-                                    <span class="phone"><?php echo $row->capacity; ?></span>
+                                    <h6>Job # :<?php echo $row->job_number; ?></h6>
+                                    <span class="phone">Size :<?php echo round($row->capacity,2); ?></span>
                                 </div><!-- az-contact-body -->
                             </div><!-- az-contact-item -->
                             <?php $num++; endforeach; endif; ?>
                             <div class="az-contact-item <?php echo (!$schedules)?"selected":""; ?> bg-gray-100" data-toggle="tab" data-target="#newjob">
-                                <div class="az-contact-body">
-                                    <h6>Add New <i class="fa fa-plus-circle"></i></h6>
+                                <div class="az-contact-body"><br>
+                                    <h6 class="text-primary"><i class="fa fa-plus-circle"></i> Add New Job</h6>
                                 </div><!-- az-contact-body -->
                             </div><!-- az-contact-item -->
                         </div>
@@ -44,22 +44,19 @@ error_reporting(E_ALL);
 
                                             <div class="media-body">
                                                 <h4><?php echo $row->job_number; ?></h4>
-                                                <p><?php echo $row->description; ?></p>
+                                                <p><?php echo $row->description." (".$row->symbol." Size".round($row->capacity,2).")"; ?></p>
                                             </div><!-- media-body -->
                                         </div><!-- media -->
                                         <div class="az-contact-action nav">
+                                            <span class="h5 text-success pull-right" align="right"><i class="fa fa-hourglass tx-15"></i> <?php echo $row->schedule_status; ?>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                                             <a href="#" class="nav-link"><?php echo $row->job_type_name; ?></a>
-                                            <a href="#" class="nav-link"><?php echo $row->symbol; ?> Size: <?php echo $row->capacity; ?></a>
                                         </div><!-- az-contact-action -->
 
                                     </div><!-- az-contact-info-header -->
                                 <div class="az-contact-info-body">
                                     <div class="media-list">
                                         <div class="media">
-                                            <div class="media-icon align-self-start">
-                                                <i class="fa fa-receipt"></i>
-                                                <span class="h4 text-success"><?php echo $row->schedule_status; ?></span>
-                                            </div>
+<!--                                            <div class="media-icon align-self-start"></div>-->
                                             <div class="media-body">
                                                 <div>
                                                     <label>Job Area</label>
@@ -67,7 +64,7 @@ error_reporting(E_ALL);
                                                 </div>
                                                 <div>
                                                     <label><?php echo ($row->symbol=="Bulk")?"Tank":"Line";?></label>
-                                                    <span class="tx-medium"> <?php echo $row->line_name; echo ($row->capacity !="")?"(".$row->capacity.")":""; ?></span>
+                                                    <span class="tx-medium"> <?php echo $row->line_name; echo ($row->capacity !="")?"(".round($row->capacity,2).")":""; ?></span>
                                                 </div>
                                             </div><!-- media-body -->
                                         </div><!-- media -->
@@ -84,11 +81,86 @@ error_reporting(E_ALL);
                                                 </div>
                                             </div><!-- media-body -->
                                         </div><!-- media -->
+                                        <!-- display for current job profile -->
                                         <div class="media">
-                                            <div class="media-icon"></div>
+<!--                                            <div class="media-icon"></div>-->
+                                            <div class="media-body">
+                                                <div class="card bd-0">
+                                                    <div class="card-header bg-gray-100 ">
+                                                        <nav class="nav az-nav-line az-nav-line-chat">
+                                                            <a class="nav-link active" data-toggle="tab" href="#tabCont1">Other Schedules</a>
+                                                            <a class="nav-link" data-toggle="tab" href="#tabCont2">Bulk/Pack Jobs</a>
+                                                            <a class="nav-link" data-toggle="tab" href="#tabCont3">Status Logs</a>
+                                                        </nav>
+                                                    </div><!-- card-header -->
+                                                    <div class="card-body bd bd-0 tab-content">
+                                                        <div id="tabCont1" class="tab-pane active show">
+                                                            <?php if($schedules): ?>
+                                                                <table class="table table-condensed">
+                                                                    <thead>
+                                                                    <th>Job Area</th>
+                                                                    <th>Line</th>
+                                                                    <th>Date</th>
+                                                                    <th>Shift</th>
+                                                                    <th>Status</th>
+                                                                    <th> </th>
+                                                                    </thead>
+                                                                    <tbody></tbody>
+                                                                    <?php  foreach ($schedule_extensions as $r): if($row->schedule_job_id == $r->schedule_job_id):?>
+                                                                        <tr>
+                                                                            <td><?php echo $r->job_area_name; ?></td>
+                                                                            <td><?php echo $r->line_name; ?></td>
+                                                                            <td><?php echo date('d M, Y', strtotime($r->schedule_date)); ?></td>
+                                                                            <td><?php echo ($r->shift_id == 1)?"Day":"Night"; ?></td>
+                                                                            <td><?php echo $r->schedule_status; ?></td>
+                                                                            <td><a href="<?php echo base_url()."planner/delete_schedule/".$r->id; ?>" class="text-danger"> <i class="fa fa-trash tx-15"></i></a></td>
+                                                                        </tr>
+                                                                    <?php endif; endforeach; ?>
+                                                                    </tbody>
+                                                                </table>
+                                                            <?php endif; ?>
+                                                        </div><!-- tab-pane -->
+                                                        <div id="tabCont2" class="tab-pane">This is tab content 2...</div>
+                                                        <div id="tabCont3" class="tab-pane">
+
+                                                            <?php if($schedule_logs): ?>
+                                                                <table  class="table table-condensed" >
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th><span align="left">User</span></th>
+                                                                        <th><span align="left">Date</span></th>
+                                                                        <th><span align="left">Status</span></th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <?php $step_checker = 0; foreach($schedule_logs as $logs): if($logs->schedule_id == $row->id): ?>
+                                                                        <tr>
+                                                                            <td align="left"><?php echo $logs->display_name; ?></td>
+                                                                            <td align="left"><?php echo date('d M,Y H:i', strtotime($logs->created_on)); ?></td>
+                                                                            <td align="left"><?php echo $logs->schedule_status_name; ?></td>
+                                                                        </tr>
+                                                                        <?php
+                                                                        //get the maximum step reached on the logs for the option boxes below
+                                                                        $step_checker = (($logs->step_order) and ($logs->step_order > $step_checker))?$logs->step_order:$step_checker;
+                                                                        ?>
+                                                                    <?php endif; endforeach; ?>
+                                                                    </tbody>
+                                                                </table>
+                                                            <?php else: ?>
+                                                                <h5> There are no logs to show </h5>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    </div><!-- card-body -->
+                                                </div><!-- card -->
+
+                                            </div>
+                                        </div>
+                                        <!-- display for extension of the job -->
+                                        <div class="media">
+<!--                                            <div class="media-icon"></div>-->
                                             <div class="media-body">
                                                 <div>
-                                                    <a href="#txtresult2" class="btn btn-primary btn-icon btn-xs pull-right" onclick="htmlData2('<?php echo base_url(); ?>planner/extend_schedule','job_area_id=<?php echo $row->job_area_id; ?>&line_id=<?php echo $line_details->id; ?>')"><i class="typcn typcn-plus-outline"></i></a>
+                                                    <a href="#txtresult2" class="btn btn-outline-primary btn-rounded pull-right" onclick="htmlData2('<?php echo base_url(); ?>planner/extend_schedule','job_area_id=<?php echo $row->job_area_id; ?>&line_id=<?php echo $line_details->id; ?>')"><i class="fa fa-plus"></i> Add Extension</a>
                                                     <br><br><br>
                                                     <!-- Display for addtional shift that is displayed by ajax-->
                                                     <div id="txtResult2"></div>
@@ -100,56 +172,50 @@ error_reporting(E_ALL);
                                 </div><!-- az-contact-info-body -->
 
                             <div class="row">
-                                <div class="col-md-7">
-                                    <?php if($schedule_logs): ?>
-                                    <label>Job Logs</label>
-                                    <table width="60%" align="left" cellspacing="3" cellpadding="3">
-                                        <thead>
-                                        <tr>
-                                            <th><span align="left">User</span></th>
-                                            <th><span align="left">Date</span></th>
-                                            <th><span align="left">Status</span></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php foreach($schedule_logs as $logs): if($logs->schedule_id == $row->id): ?>
-                                        <tr>
-                                            <td align="left"><?php echo $logs->display_name; ?></td>
-                                            <td><?php echo date('d M,Y H:i', strtotime($logs->created_on)); ?></td>
-                                            <td><?php echo $logs->schedule_status_name; ?></td>
-                                        </tr>
-                                        <?php endif; endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="col-md-2"></div>
-                                <div class="col-md-3">
-                                    <label>Job Status</label>
-                                    <div class="row">
+                                <div class="col-md-5">
 
-                                        <?php
+                                </div>
+                                <div class="col-md-7">
+                                    <label>Job Status</label>
+                                    <table>
+                                        <tr>
+                                            <?php
                                             foreach($statuses as $st):
-                                                $checked = "";
-                                            foreach($schedule_logs as $logs){
-                                                if($logs->schedule_id == $row->id and $st->id == $logs->schedule_status){
-                                                    $checked = "checked disabled";
+                                                $checked = ((ISSET($step_checker))and($st->step_order < $step_checker) and ($st->step_order != 0))?"disabled":"";
+                                                if($schedule_logs){
+                                                    foreach($schedule_logs as $logs){
+                                                        if($logs->schedule_id == $row->id and $st->id == $logs->schedule_status){
+                                                            $checked = "checked disabled";
+                                                        }
+                                                    }
                                                 }
-                                            }
-                                        ?>
-                                        <div class="col-lg-12 ">
-                                            <label class="checkbox">
-                                                <input type="checkbox"  name="statuses[]" value="<?php echo $st->id; ?>" <?php echo $checked; ?>><span><?php echo $st->schedule_status; ?></span>
-                                            </label>
-                                        </div>
-                                        <?php endforeach; ?>
-                                    </div>
+                                                ?>
+                                                <td>
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" class="form-control" name="statuses[]" value="<?php echo $st->id; ?>" <?php echo $checked; ?>><span><?php echo $st->schedule_status; ?></span>
+                                                    </label>
+                                                </td>
+                                            <?php endforeach; ?>
+                                        </tr>
+                                    </table>
+                                </div>
                                 </div>
                                 <input type="hidden" name="schedule_id" value="<?php echo $row->id; ?>" >
                                 <input type="hidden" name="schedule_job_id" value="<?php echo $row->schedule_job_id; ?>" >
                                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" >
-                                <button type="submit" class="btn btn-az-primary btn-block" name="submit" value="submit">Update Schedules</button>
-                            </div>
+                               <hr>
+                                <table width="100%" border="0">
+                                    <tr>
+                                        <td width="12%">
+                                            <button type="submit" class="btn btn-outline-light text-danger" name="submit" value="Delete"><i class="fa fa-trash"></i> Delete</button>
+                                        </td>
+                                        <td></td>
+                                        <td width="30%">
+                                            <button type="submit" class="btn btn-primary btn-rounded btn-block" name="submit" value="submit"><i class="fa fa-download"></i> Save Schedule</button>
+                                        </td>
+                                    </tr>
+                                </table>
+
                             </form>
                         </div><!-- tab-pane -->
                         </div><!-- tab-pane -->
@@ -159,7 +225,7 @@ error_reporting(E_ALL);
                                 <div class="az-contact-info-body">
                                     <div class="media-list">
                                         <div class="media">
-                                            <div class="media-icon"><i class="fa fa-calendar-alt"></i></div>
+<!--                                            <div class="media-icon"><i class="fa fa-calendar-alt"></i></div>-->
                                             <div class="media-body">
                                                 <div>
                                                     <label>Date</label>
@@ -172,7 +238,7 @@ error_reporting(E_ALL);
                                             </div><!-- media-body -->
                                         </div><!-- media -->
                                         <div class="media">
-                                            <div class="media-icon align-self-start"></div>
+<!--                                            <div class="media-icon align-self-start"></div>-->
                                             <div class="media-body">
                                                 <div>
                                                     <label>Job type</label>
@@ -185,7 +251,7 @@ error_reporting(E_ALL);
                                             </div><!-- media-body -->
                                         </div><!-- media -->
                                         <div class="media">
-                                            <div class="media-icon"></div>
+<!--                                            <div class="media-icon"></div>-->
                                             <div class="media-body">
                                                 <div>
                                                     <label><?php echo ($line_details->job_type_id == 1)?"Tank":"Line"; ?></label>
@@ -194,31 +260,46 @@ error_reporting(E_ALL);
                                             </div><!-- media-body -->
                                         </div><!-- media -->
                                         <div class="media">
-                                            <div class="media-icon"><!--<i class="fa fa-pen"></i>--></div>
+<!--                                            <div class="media-icon"><i class="fa fa-pen"></i></div>-->
                                             <div class="media-body">
                                                 <div><br>
                                                     <form class="form-horizontal" name="new_line_schedule_form" id="new_line_schedule_form" method="post" action="<?php echo base_url(); ?>planner/new_schedule">
                                                         <div class="form-group">
                                                             <div class="row row-sm">
-                                                                <div class="col-sm-7">
-                                                                    <label >Job Number</label>
-                                                                    <input type="text" name="job_number" class="form-control" placeholder="" required="">
+                                                                <div class="col-sm-12">
+                                                                    <label >Search Job Number</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" placeholder="Search for jobs..." onkeypress="htmlData4('<?php echo base_url()."planner/search_job_type_numbers" ?>','job_type=<?php echo $line_details->job_type_id; ?>&job_number='+this.value)">
+                                                                        <span class="input-group-btn">
+                                                                          <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
+                                                                        </span>
+                                                                    </div><!-- input-group -->
                                                                     <input type="hidden" name="line_id" value="<?php echo $line_details->id; ?>" >
                                                                     <input type="hidden" name="shift_id" value="<?php echo $shift_id; ?>" >
                                                                     <input type="hidden" name="schedule_date" value="<?php echo $schedule_date; ?>" >
                                                                     <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" >
-                                                                </div><!-- col -->
-                                                                <div class="col-sm-5">
-                                                                    <label >Bulk Size</label>
-                                                                    <input type="number" name="capacity" class="form-control" placeholder="" required="">
-                                                                </div><!-- col -->
-                                                            </div><!-- row -->
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label>Description</label>
-                                                            <textarea class="form-control" rows="3" name="description" placeholder=""></textarea>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-az-secondary btn-block" name="submit" value="submit">Submit Schedule</button>
+                                                        <div id="txtResult4"></div>
+
+<!--                                                        <div class="form-group">-->
+<!--                                                            <div class="row row-sm">-->
+<!--                                                                <div class="col-sm-7">-->
+<!--                                                                    <label >Job Number</label>-->
+<!--                                                                    <input type="text" name="job_number" class="form-control" placeholder="" required="">                                                                    -->
+<!--                                                                </div>-->
+<!--                                                                <div class="col-sm-5">-->
+<!--                                                                    <label >Bulk Size</label>-->
+<!--                                                                    <input type="number" name="capacity" class="form-control" placeholder="" required="">-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="form-group">-->
+<!--                                                            <label>Description</label>-->
+<!--                                                            <textarea class="form-control" rows="3" name="description" placeholder=""></textarea>-->
+<!--                                                        </div>-->
+
                                                     </form>
                                                 </div>
                                             </div><!-- media-body -->
@@ -231,9 +312,9 @@ error_reporting(E_ALL);
                 </div>
             </div>
         </div><!-- modal-body -->
-        <div class="modal-footer">
+<!--        <div class="modal-footer">-->
 <!--            <button  id="submit" class="btn btn-primary"><i class="fa fa-save"></i> Submit</button>-->
-            <button type="button" data-dismiss="modal" class="btn btn-outline-light">Close</button>
-        </div>
+<!--            <button type="button" data-dismiss="modal" class="btn btn-outline-light">Close</button>-->
+<!--        </div>-->
     </div>
 </div><!-- modal-dialog

@@ -2,7 +2,7 @@ $(function(){
   'use strict'
 
   // Datepicker found in left sidebar of the page
-  var highlightedDays = ['2018-5-10','2018-5-11','2018-5-12','2018-5-13','2018-5-14','2018-5-15','2018-5-16'];
+  var highlightedDays = ['2024-6-10','2024-6-11','2024-6-12','2024-6-13','2024-6-14','2024-6-15','2024-6-16'];
   var date = new Date();
 
   $('.fc-datepicker').datepicker({
