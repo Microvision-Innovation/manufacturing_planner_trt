@@ -39,6 +39,41 @@ class Schedule_model extends MY_Model {
                                     LEFT JOIN bf_vision_job_types jt ON ja.job_type_id = jt.id 
                                     WHERE s.schedule_date ='".$schedule_date."' AND  s.shift_id ='".$shift_id."' AND s.job_line_id='".$line_id."' AND s.deleated=0")->result();
     }
+    public function get_related_line_shifts_schedules($shift_id, $line_id, $schedule_date){
+        return $this->db->query("SELECT s.*, ss.schedule_status, sj.job_number,sj.job_numbers,sj.capacity, sj.description,ja.id job_area_id, ja.job_area_name,jl.line_name, jt.job_type_name, jt.symbol FROM bf_vision_schedules s 
+                                    INNER JOIN (SELECT sj.*,
+                                                    CASE
+                                                        WHEN RIGHT(job_number, 1) = 'B' THEN SUBSTRING(job_number, 1, LENGTH(job_number) - 1)
+                                                        ELSE job_number
+                                                    END AS job_numbers FROM bf_vision_schedule_jobs sj) sj ON sj.id=s.schedule_job_id
+                                    LEFT JOIN bf_vision_schedule_status ss ON ss.id = s.status
+                                    LEFT JOIN bf_vision_job_lines jl ON jl.id = s.job_line_id
+                                    LEFT JOIN bf_vision_job_areas ja ON jl.job_area_id = ja.id 
+                                    LEFT JOIN bf_vision_job_types jt ON ja.job_type_id = jt.id 
+                                    INNER JOIN
+                                    (SELECT sj.id,sj.job_number,
+                                                    CASE
+                                                        WHEN RIGHT(job_number, 1) = 'B' THEN SUBSTRING(job_number, 1, LENGTH(job_number) - 1)
+                                                        ELSE job_number
+                                                    END AS job_numbers FROM bf_vision_schedules s 
+                                        LEFT JOIN bf_vision_schedule_jobs sj ON sj.id=s.schedule_job_id 
+                                        WHERE s.schedule_date ='".$schedule_date."' AND  s.shift_id ='".$shift_id."' AND s.job_line_id='".$line_id."' AND s.deleated=0)rl ON rl.job_numbers = sj.job_numbers and rl.id != sj.id
+                                         WHERE rl.id IS NOT NULL")->result();
+    }
+    public function get_related_job_schedules($job_number, $job_id)
+    {
+        return $this->db->query("SELECT s.*, ss.schedule_status, sj.job_number,sj.capacity, sj.description,ja.id job_area_id, ja.job_area_name,jl.line_name, jt.job_type_name, jt.symbol FROM bf_vision_schedules s 
+                                    RIGHT JOIN (SELECT sj.*,
+                                                    CASE
+                                                        WHEN RIGHT(job_number, 1) = 'B' THEN SUBSTRING(job_number, 1, LENGTH(job_number) - 1)
+                                                        ELSE job_number
+                                                    END AS job_numbers FROM bf_vision_schedule_jobs sj WHERE id != '".$job_id."' HAVING job_numbers = '".$job_number."') sj ON sj.id=s.schedule_job_id
+                                    LEFT JOIN bf_vision_schedule_status ss ON ss.id = s.status
+                                    LEFT JOIN bf_vision_job_lines jl ON jl.id = s.job_line_id
+                                    LEFT JOIN bf_vision_job_areas ja ON jl.job_area_id = ja.id 
+                                    LEFT JOIN bf_vision_job_types jt ON ja.job_type_id = jt.id
+                                    WHERE deleated=0")->result();
+    }
     public function get_line_shift_schedule_extensions($shift_id, $line_id, $schedule_date)
     {
         return $this->db->query("SELECT s.*, ss.schedule_status, sj.job_number,sj.capacity, sj.description,ja.id job_area_id, ja.job_area_name,jl.line_name, jt.job_type_name, jt.symbol FROM bf_vision_schedules s

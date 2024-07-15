@@ -1,4 +1,10 @@
+<style>
 
+    .highlighted-date a {
+        background-color: #6fa2ef !important; /* Highlight color */
+        color: #000 !important; /* Text color */
+    }
+</style>
 
 <style>
     table {
@@ -316,23 +322,32 @@
     $(function(){
         'use strict'
 
-        // Datepicker found in left sidebar of the page
-        var highlightedDays = ['2024-7-10','2024-7-11','2024-7-12','2024-7-13','2024-7-14','2024-7-15','2024-7-16'];
-        var date = new Date();
+        // Define the array of selected dates
+        var selectedDates = ['<?php echo  $filter_date; ?>']; // Example dates
+
+        // Function to check if a date is in the selected dates array
+        function isDateSelected(date) {
+            var dateString = $.datepicker.formatDate('yy-mm-dd', date);
+            return selectedDates.includes(dateString);
+        }
 
         $('.fc-datepicker').datepicker({
             showOtherMonths: true,
             selectOtherMonths: true,
-            dateFormat: 'yyyy-mm-dd',
+            changeMonth: false,
+            changeYear: false,
+            dateFormat: 'yy-mm-dd',
+            onSelect: function(dateText) {
+                // When a date is selected, redirect to the desired URL
+                window.location.href = '<?php echo base_url()."planner/index/"; ?>' + dateText + '<?php echo "/".$active_job_area; ?>';
+            },
             beforeShowDay: function(date) {
-                var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
-                for (var i = 0; i < highlightedDays.length; i++) {
-                    if($.inArray(y + '-' + (m+1) + '-' + d,highlightedDays) != -1) {
-                        return [true, 'ui-date-highlighted', ''];
-                    }
+                if (isDateSelected(date)) {
+                    return [true, 'highlighted-date'];
                 }
-                return [true];
+                return [true, ''];
             }
+
         });
 
 

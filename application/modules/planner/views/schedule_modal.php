@@ -88,13 +88,13 @@ error_reporting(E_ALL);
                                                 <div class="card bd-0">
                                                     <div class="card-header bg-gray-100 ">
                                                         <nav class="nav az-nav-line az-nav-line-chat">
-                                                            <a class="nav-link active" data-toggle="tab" href="#tabCont1">Other Schedules</a>
-                                                            <a class="nav-link" data-toggle="tab" href="#tabCont2">Bulk/Pack Jobs</a>
-                                                            <a class="nav-link" data-toggle="tab" href="#tabCont3">Status Logs</a>
+                                                            <a class="nav-link active" data-toggle="tab" href="#profileSchedulesTab<?php echo $row->id; ?>">Other Schedules</a>
+                                                            <a class="nav-link" data-toggle="tab" href="#profileJobsTab<?php echo $row->id; ?>">Bulk/Pack Jobs</a>
+                                                            <a class="nav-link" data-toggle="tab" href="#profileLogsTab<?php echo $row->id; ?>">Status Logs</a>
                                                         </nav>
                                                     </div><!-- card-header -->
                                                     <div class="card-body bd bd-0 tab-content">
-                                                        <div id="tabCont1" class="tab-pane active show">
+                                                        <div id="profileSchedulesTab<?php echo $row->id; ?>" class="tab-pane active show">
                                                             <?php if($schedules): ?>
                                                                 <table class="table table-condensed">
                                                                     <thead>
@@ -120,8 +120,43 @@ error_reporting(E_ALL);
                                                                 </table>
                                                             <?php endif; ?>
                                                         </div><!-- tab-pane -->
-                                                        <div id="tabCont2" class="tab-pane">This is tab content 2...</div>
-                                                        <div id="tabCont3" class="tab-pane">
+                                                        <div id="profileJobsTab<?php echo $row->id; ?>" class="tab-pane">
+                                                            <?php if($related_schedules): $n=0;
+                                                                foreach($related_schedules as $rl):
+                                                                if($rl->job_numbers == rtrim($row->job_number, 'B')):
+                                                                    $n++;?>
+                                                            <div class="row">
+                                                                <div class="col-md-9">
+                                                                    <span class="h5"><?php echo $rl->job_number; ?> <small class="text-muted">(<?php echo $rl->description; ?>)</small></span>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <span class="text-success pull-right"><?php echo $rl->schedule_status; ?></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <span class="text-muted">Date</span>
+                                                                    <?php echo date('D d M,Y',strtotime($rl->schedule_date)); ?>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <span class="text-muted">Job Area</span>
+                                                                    <?php echo $rl->job_area_name; ?>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <span class="text-muted"><?php echo $rl->line_name; ?></span>
+                                                                    H1
+                                                                </div>
+                                                            </div>
+                                                            <?php
+                                                                endif;
+                                                                endforeach;
+                                                                echo ($n == 0)?"<h6>There are no related jobs Found</h6>":"";
+                                                                else:
+                                                                ?>
+                                                                    <h6>There are no related jobs Found</h6>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                        <div id="profileLogsTab<?php echo $row->id; ?>" class="tab-pane">
 
                                                             <?php if($schedule_logs): ?>
                                                                 <table  class="table table-condensed" >

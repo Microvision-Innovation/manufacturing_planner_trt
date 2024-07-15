@@ -18,9 +18,9 @@ class Data_sync extends Front_Controller
 
     public function index()
     {
-        //$start_date = date('Y-m-d', strtotime('2024-03-01'));
-        //$end_date = date('Y-m-d', strtotime('2024-07-31'));
-        //$sync_data = $this->data_sync_model->get_scheduled_jobs($start_date, $end_date);
+//        $start_date = date('Y-m-d', strtotime('2024-01-01'));
+//        $end_date = date('Y-m-d', strtotime('2024-07-31'));
+//        $sync_data = $this->data_sync_model->get_scheduled_jobs($start_date, $end_date);
         //print_r($sync_data); die();
         $sync_data = $this->data_sync_model->scheduled_jobs();
        //loop through the list
@@ -33,6 +33,14 @@ class Data_sync extends Front_Controller
             if($job_check){
                 //if it exists check schedule and update status
                 $duplicates ++;
+                $data = array(
+                    'capacity' => $row->qty,
+                    'description' => $row->item_name,
+                    'produced_qty' => $row->produced_qty,
+                    'planned_start_date' => $row->planned_start_date,
+                    'modified_by' => 1
+                );
+                $this->schedule_job_model->update($job_check->id,$data);
             }else{
                 //check last char if bulk and save in orders
 //                $last_character = substr($row->job_no, -1);
@@ -43,6 +51,7 @@ class Data_sync extends Front_Controller
                     'job_type' => $job_type,
                     'capacity' => $row->qty,
                     'description' => $row->item_name,
+                    'produced_qty' => $row->produced_qty,
                     'planned_start_date' => $row->planned_start_date,
                     'status' => 1,
                     'deleted' => 0,

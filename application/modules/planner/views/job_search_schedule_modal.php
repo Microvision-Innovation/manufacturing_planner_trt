@@ -121,7 +121,34 @@ error_reporting(E_ALL);
                                                             </table>
                                                             <?php endif; ?>
                                                         </div><!-- tab-pane -->
-                                                        <div id="tabCont2" class="tab-pane">This is tab content 2...</div>
+                                                        <div id="tabCont2" class="tab-pane">
+                                                            <?php if($related_jobs): foreach($related_jobs as $rl): ?>
+                                                            <div class="row">
+                                                                <div class="col-md-9">
+                                                                    <span class="h5"><?php echo $rl->job_number; ?> <small class="text-muted">(<?php echo $rl->description; ?>)</small></span>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <span class="text-success pull-right"><?php echo $rl->schedule_status; ?></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <span class="text-muted">Date</span>
+                                                                    <?php echo date('D d M,Y',strtotime($rl->schedule_date)); ?>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <span class="text-muted">Job Area</span>
+                                                                    <?php echo $rl->job_area_name; ?>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <span class="text-muted"><?php echo $rl->line_name; ?></span>
+                                                                    H1
+                                                                </div>
+                                                            </div>
+                                                            <?php endforeach; else: ?>
+                                                                <h6>There are no related jobs schedules found. </h6>
+                                                            <?php endif; ?>
+                                                        </div>
                                                         <div id="tabCont3" class="tab-pane">
                                                             <?php if($schedule_logs): ?>
                                                                 <table  class="table table-condensed" >

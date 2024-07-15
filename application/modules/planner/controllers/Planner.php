@@ -56,6 +56,7 @@ class Planner extends Front_Controller
         Template::set('area_schedules', $this->schedule_model->get_area_schedules($job_area_id,$start_date,$end_date));
         Template::set('start_date', $start_date);
         Template::set('end_date', $end_date);
+        Template::set('active_job_area', $job_area_id);
         Template::set('display_days', $display_days);
         Template::set('all_schedule_statuses', $this->schedule_model->get_all_statuses());
 
@@ -90,6 +91,7 @@ class Planner extends Front_Controller
         $line_details = $this->schedule_model->get_line_details($line_id);
         //get scheduled jobs on the line for the day
         $data['schedules'] = $this->schedule_model->get_line_shift_schedule($shift_id, $line_id, $schedule_date);
+        $data['related_schedules'] = $this->schedule_model->get_related_line_shifts_schedules($shift_id, $line_id, $schedule_date);
         $data['schedule_extensions'] = $this->schedule_model->get_line_shift_schedule_extensions($shift_id, $line_id, $schedule_date);
         $data['schedule_logs'] = $this->schedule_model->get_line_shift_schedule_logs($shift_id, $line_id, $schedule_date);
         $data['statuses'] = $this->schedule_model->get_statuses($line_details->job_type_id);
@@ -408,6 +410,9 @@ eod;
                                                     ->where(array("schedule_job_id" => $job_number,"deleated"=>0))
                                                     ->select('bf_vision_schedules.*,l.line_name,a.job_area_name,s.shift_name,sts.schedule_status, jt.symbol,l.job_area_id')
                                                     ->find_all();
+        //get related schedules/jobs
+        $trimmed_job_number = rtrim($job_details->job_number, 'B');
+        $data['related_jobs'] = $this->schedule_model->get_related_job_schedules($trimmed_job_number, $job_details->id);
         //get job logs
         $data['schedule_logs']= $this->schedule_logs_model
                                                     ->join('bf_vision_schedules s','s.id=bf_vision_schedule_logs.schedule_id','inner')

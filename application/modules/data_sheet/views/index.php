@@ -71,6 +71,7 @@
                                         <th>Bulk Size</th>
                                         <th>Pack line</th>
                                         <th>Pack Units</th>
+                                        <th>Output Qty</th>
                                         <th>Status</th>
                                     </tr>
                                     </thead>
@@ -87,6 +88,7 @@
                                             <td><?php echo ($row->bulk_size)?round($row->bulk_size,2):''; ?></td>
                                             <td><?php echo $row->pack_lines; ?></td>
                                             <td><?php echo ($row->pack_units)?round($row->pack_units,2):''; ?></td>
+                                            <td><?php echo ($row->produced_qty)?round($row->produced_qty,2):''; ?></td>
                                             <td><?php echo $row->schedule_status; ?></td>
                                         </tr>
                                     <?php endforeach; ?>
