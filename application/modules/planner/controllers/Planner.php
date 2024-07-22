@@ -195,45 +195,55 @@ class Planner extends Front_Controller
             //check if it's an extension or status update for an existing schedule
             if(ISSET($_POST['schedule_id'])){
                 $schedule_id = $_POST['schedule_id'];
-                if(ISSET($_POST['statuses'])){
-                    //update the schedule status
-                    $statuses = $_POST['statuses'];
-                    //get the fields entered
-                    $schedule_status = $this->schedule_model->get_schedule_logs($schedule_id);
-                    foreach($statuses as $s){
-                        $num =0;
-                        foreach ($schedule_status as $row){
-                            if($row->schedule_status == $s){$num++;}
-                        }
-                        if($num==0){
-                            $schedule_logs = array(
-                                'schedule_id' => $schedule_id,
-                                'schedule_status' => $s
-                            );
-                            $this->schedule_logs_model->insert($schedule_logs);
-                            $current_status = $s;
-                        }
-                    }
-
-                    //check if the status has changed and update current status
-                    if(ISSET($current_status)){
-                        $schedule_status_update_data = array(
-                            'status' => $current_status
-                        );
-                        $this->schedule_model->update($schedule_id,$schedule_status_update_data);
-                    }
-                }
                 //update for the extension of the shift
+                $schedule_details = $this->schedule_model->as_object()->find($schedule_id);
+                $extension_status = $schedule_details->status;
                 if(ISSET($_POST['job_area_id'])&&ISSET($_POST['line_id'])){
+                    //get status from an existing job and use it as the current job status
                     $data = array(
                         'schedule_job_id' => $schedule_job_id,
                         'job_line_id' => $_POST['line_id'],
                         'shift_id' => $_POST['shift_id'],
                         'schedule_date' => $_POST['extension_date'],
-                        'status' => 0
+                        'status' => $extension_status
                     );
                     $this->schedule_model->insert($data);
                 }
+                //todo:move all statuses from the schedule to the job
+                //get all jobs for the schedule and update each of them
+                $schedule_jobs = $this->schedule_model->where(array('schedule_job_id'=>$schedule_job_id,'deleated'=>0))->find_all();
+                foreach($schedule_jobs as $sj) {
+                    $schedule_id = $sj->id;
+                    if(ISSET($_POST['statuses'])){
+                        //update the schedule status
+                        $statuses = $_POST['statuses'];
+                        //get the fields entered
+                        $schedule_status = $this->schedule_model->get_schedule_logs($schedule_id);
+                        foreach($statuses as $s){
+                            $num =0;
+                            foreach ($schedule_status as $row){
+                                if($row->schedule_status == $s){$num++;}
+                            }
+                            if($num==0){
+                                $schedule_logs = array(
+                                    'schedule_id' => $schedule_id,
+                                    'schedule_status' => $s
+                                );
+                                $this->schedule_logs_model->insert($schedule_logs);
+                                $current_status = $s;
+                            }
+                        }
+
+                        //check if the status has changed and update current status
+                        if(ISSET($current_status)){
+                            $schedule_status_update_data = array(
+                                'status' => $current_status
+                            );
+                            $this->schedule_model->update($schedule_id,$schedule_status_update_data);
+                        }
+                    }
+                }
+
                 //log activity
                 log_activity($this->auth->user_id(),"Updated status or extension schedule for :".$schedule_job_id.", job number: ".$job_details->job_number, 'planner');
                 Template::set_message('The schedule for  <b>'.$job_details->job_number.'</b> was succesfully updated.', 'alert alert-solid-success');
@@ -249,32 +259,40 @@ class Planner extends Front_Controller
                     'status' => 0
                 );
                 $schedule_id = $this->schedule_model->insert($schedule_data);
-                //save the status for the schedule
-                if(ISSET($_POST['statuses'])) {
-                    //update the schedule status
-                    $statuses = $_POST['statuses'];
-                    foreach ($statuses as $s) {
-                        $schedule_logs = array(
-                            'schedule_id' => $schedule_id,
-                            'schedule_status' => $s
-                        );
-                        $this->schedule_logs_model->insert($schedule_logs);
-                        $current_status = $s;
+                //todo:move all statuses from the schedule to the job
+                //get all jobs for the schedule and update each of them
+                $schedule_jobs = $this->schedule_model->where(array('schedule_job_id'=>$schedule_job_id,'deleated'=>0))->find_all();
+                foreach($schedule_jobs as $sj){
+                    $schedule_id = $sj->id;
+
+                    //save the status for the schedule
+                    if(ISSET($_POST['statuses'])) {
+                        //update the schedule status
+                        $statuses = $_POST['statuses'];
+                        foreach ($statuses as $s) {
+                            $schedule_logs = array(
+                                'schedule_id' => $schedule_id,
+                                'schedule_status' => $s
+                            );
+                            $this->schedule_logs_model->insert($schedule_logs);
+                            $current_status = $s;
+                        }
+                        //check if the status was selected and update current status
+                        if (isset($current_status)) {
+                            $schedule_status_update_data = array(
+                                'status' => $current_status
+                            );
+                            $this->schedule_model->update($schedule_id, $schedule_status_update_data);
+                        }
                     }
-                    //check if the status was selected and update current status
-                    if (isset($current_status)) {
-                        $schedule_status_update_data = array(
-                            'status' => $current_status
-                        );
-                        $this->schedule_model->update($schedule_id, $schedule_status_update_data);
-                    }
+                    //save the schedule log
+                    $schedule_log_data = array (
+                        'schedule_id' => $schedule_id,
+                        'schedule_status' => 0
+                    );
+                    $this->schedule_logs_model->insert($schedule_log_data);
                 }
-                //save the schedule log
-                $schedule_log_data = array (
-                    'schedule_id' => $schedule_id,
-                    'schedule_status' => 0
-                );
-                $this->schedule_logs_model->insert($schedule_log_data);
+
                 //log activity
                 log_activity($this->auth->user_id(),"Created new schedule for :".$schedule_job_id.", job number: ".$job_details->job_number, 'planner');
                 Template::set_message('The schedule for  <b>'.$job_details->job_number.'</b> was succesfully created.', 'alert alert-solid-success');
@@ -283,6 +301,7 @@ class Planner extends Front_Controller
                                                 ->join('bf_vision_job_lines l','l.id = job_line_id','left')
                                                 ->select('bf_vision_schedules.*,l.job_area_id')
                                                 ->find($schedule_id);
+
             redirect('planner/index/'.$schedule_details->schedule_date.'/'.$schedule_details->job_area_id,true);
         }elseif(ISSET($_POST['submit']) AND $_POST['submit'] == 'Delete'){
             if(ISSET($_POST['schedule_id'])){
@@ -435,5 +454,29 @@ eod;
                                             ->find_all();
         $this->load->view('job_search_schedule_modal',$data);
     }
+    public function open_jobs($job_id){
+        //get the last status on the job before it was put on hold
+        $last_status = $this->schedule_status_model->get_last_status($job_id);
+        //get all schedules for the job
+        $schedules = $this->schedule_model->where(array("schedule_job_id"=>$job_id,"deleated"=>0))->find_all();
+        //update all status to current status
+        foreach($schedules as $row){
+            $data = array('status' => $last_status->status);
+            $this->schedule_model->update($row->id,$data);
+            $schedule_id = $row->id;
+        }
+        //get detailed from the last job through the last schedule updated
+        $schedule_details = $this->schedule_model->as_object()
+            ->join('bf_vision_job_lines l','l.id = job_line_id','left')
+            ->join('bf_vision_schedule_jobs sj','sj.id=bf_vision_schedules.schedule_job_id','left')
+            ->select('bf_vision_schedules.*,l.job_area_id, sj.job_number')
+            ->find($schedule_id);
+        //log the activity
+        log_activity($this->auth->user_id(),"Re-opened job number: ".$schedule_details->job_number." that was on hold", 'planner');
+        Template::set_message('The schedule for  <b>'.$schedule_details->job_number.'</b> was succesfully reopened.', 'alert alert-solid-success');
+        //die();
+        redirect('planner/index/'.$schedule_details->schedule_date.'/'.$schedule_details->job_area_id,true);
+    }
+
 
 }

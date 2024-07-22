@@ -118,7 +118,8 @@ class Schedule_model extends MY_Model {
     {
         return $this->db->query("SELECT sj.*,jt.symbol FROM bf_vision_schedule_jobs sj 
                                         LEFT JOIN bf_vision_job_types jt ON jt.id = sj.job_type
-                                        WHERE sj.job_number LIKE '%".$job_number."%' and sj.deleted=0 ORDER BY sj.created_on DESC LIMIT 10")->result();
+                                        WHERE (sj.job_number LIKE '%".$job_number."%') and sj.deleted=0 
+                                        ORDER  BY LOCATE('".$job_number."', sj.job_number), sj.created_on DESC LIMIT 10")->result();
     }
     public function get_search_results2($job_number,$job_type)
     {

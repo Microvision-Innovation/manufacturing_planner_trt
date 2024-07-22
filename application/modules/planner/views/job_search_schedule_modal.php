@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-
+$j_status = "";
 ?>
 <div class="modal-dialog modal-lg" role="modal" >
     <div class="modal-content modal-content-demo">
@@ -48,7 +48,7 @@ error_reporting(E_ALL);
                                     <div class="media-list">
                                         <!--Display for schedules if they are available -->
                                         <?php if($job_schedules): $n=0; ?>
-                                        <?php  foreach ($job_schedules as $row): if($n==0): $n++; ?>
+                                        <?php  foreach ($job_schedules as $row): if($n==0): $n++; $j_status = $row->status; ?>
                                         <div class="media">
 <!--                                            <div class="media-icon align-self-start">-->
 <!--                                                <i class="fa fa-receipt tx-20"></i>-->
@@ -250,22 +250,29 @@ error_reporting(E_ALL);
                                 </div><!-- az-contact-info-body -->
 
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
 
                                 </div>
 
-                                <div class="col-md-7">
+                                <div class="col-md-8">
                                     <label>Job Status</label>
+                                    <!-- check if the job status is on hold and dont show the other status -->
+                                    <?php if($j_status == 4 or $j_status == 8): ?>
+                                        <div class="alert alert-outline-warning" role="alert">
+                                            This job is currently on On-hold.
+                                            <a href="<?php echo base_url()."planner/open_jobs/".$job_details->id;?>" class="btn btn-xs btn-outline-warning btn-rounded">Click here to Open</a>
+                                        </div>
+                                    <?php else: ?>
                                     <table>
                                         <tr>
                                         <?php
-                                        //check if the step cheker has a value and use it to determine the checkboxes
+                                        //check if the step checker has a value and use it to determine the checkboxes
                                         //$checked = ($step_checker>0)?"disabled":"";
                                             foreach($statuses as $st):
                                                 $checked = ((ISSET($step_checker))and($st->step_order < $step_checker) and ($st->step_order != 0))?"disabled":"";
                                                 if($schedule_logs){
                                                     foreach($schedule_logs as $logs){
-                                                        if($logs->schedule_id == $schedule_id and $st->id == $logs->schedule_status){
+                                                        if(($logs->schedule_id == $schedule_id and $st->id == $logs->schedule_status) AND ($st->id != 4 AND $st->id !=8)){
                                                             $checked = "checked disabled";
                                                     }
                                                 }
@@ -279,6 +286,7 @@ error_reporting(E_ALL);
                                         <?php endforeach; ?>
                                         </tr>
                                     </table>
+                                    <?php endif; ?>
                                     </div>
                                 </div>
                                 <input type="hidden" name="schedule_job_id" value="<?php echo $job_details->id; ?>" >

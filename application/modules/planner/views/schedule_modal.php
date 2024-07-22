@@ -207,11 +207,18 @@ error_reporting(E_ALL);
                                 </div><!-- az-contact-info-body -->
 
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
 
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-8">
                                     <label>Job Status</label>
+                                    <!-- check if the job status is on hold and dont show the other status -->
+                                    <?php if($row->status == 4 or $row->status == 8): ?>
+                                        <div class="alert alert-outline-warning" role="alert">
+                                            This job is currently on On-hold.
+                                            <a href="<?php echo base_url()."planner/open_jobs/".$row->schedule_job_id;?>" class="btn btn-xs btn-outline-warning btn-rounded">Click here to Open</a>
+                                        </div>
+                                    <?php else: ?>
                                     <table>
                                         <tr>
                                             <?php
@@ -219,7 +226,7 @@ error_reporting(E_ALL);
                                                 $checked = ((ISSET($step_checker))and($st->step_order < $step_checker) and ($st->step_order != 0))?"disabled":"";
                                                 if($schedule_logs){
                                                     foreach($schedule_logs as $logs){
-                                                        if($logs->schedule_id == $row->id and $st->id == $logs->schedule_status){
+                                                        if(($logs->schedule_id == $row->id and $st->id == $logs->schedule_status) AND ($st->id != 4 AND $st->id !=8)){
                                                             $checked = "checked disabled";
                                                         }
                                                     }
@@ -233,6 +240,7 @@ error_reporting(E_ALL);
                                             <?php endforeach; ?>
                                         </tr>
                                     </table>
+                                    <?php endif; ?>
                                 </div>
                                 </div>
                                 <input type="hidden" name="schedule_id" value="<?php echo $row->id; ?>" >

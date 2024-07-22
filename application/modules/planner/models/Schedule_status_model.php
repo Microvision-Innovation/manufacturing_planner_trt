@@ -15,6 +15,11 @@ class Schedule_status_model extends MY_Model {
 	protected $modified_by_field = 'modified_by';
 
 
+    public function get_last_status($job_id){
+        return $this->db->query("SELECT MAX(schedule_status) as status FROM bf_vision_schedule_logs l
+                                    INNER JOIN bf_vision_schedules s ON s.id=l.schedule_id
+                                    WHERE s.schedule_job_id='".$job_id."' AND (schedule_status !=8 AND schedule_status !=4)")->row();
+    }
 
 	
 }

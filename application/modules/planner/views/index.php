@@ -252,7 +252,7 @@
             <div class="row row-sm">
                 <div class="col-md-6 col-lg-4 col-xl-12">
                     <div class="input-group">
-                        <input type="text" class="form-control" onkeypress="htmlData3('<?php echo base_url(); ?>planner/search_job_numbers','job_number='+this.value)" placeholder="Search Job Numbers...">
+                        <input type="text" class="form-control" oninput="htmlData3('<?php echo base_url(); ?>planner/search_job_numbers','job_number='+this.value)" placeholder="Search Job Numbers...">
                         <span class="input-group-btn">
                             <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
                         </span>

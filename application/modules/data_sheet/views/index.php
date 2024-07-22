@@ -61,8 +61,8 @@
                                 <table class="table table-condensed table-bordered" id="table_wrapper" border="1" width="100%" >
                                     <thead>
                                     <tr>
-                                        <th>Start Date</th>
                                         <th>Planned Date</th>
+                                        <th>Start Date</th>
                                         <th>Day</th>
                                         <th>Shift</th>
                                         <th>Job Number</th>
