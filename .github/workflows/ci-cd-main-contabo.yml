@@ -1,0 +1,43 @@
+name: ci-cd-main-contabo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt-get install -y rsync openssh-client
+
+      - name: Write SSH key to file
+        run: |
+          echo "${{ secrets.CONTABO_SSH_KEY }}" > /tmp/ssh_key
+          chmod 600 /tmp/ssh_key
+          ls -la /tmp/ssh_key  # Verify the key file exists
+
+      - name: Deploy to Contabo
+        run: |
+          ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -o ServerAliveCountMax=120 -i /tmp/ssh_key github@${{ secrets.CONTABO_PUB_IP }} '
+            cd /var/www/planner-staging.microvision.co.ke/public_html &&
+            sudo chown -R github:github . &&
+            sudo chmod -R u+rwX,go+rX,go-w . &&
+            git config --global --add safe.directory . &&
+            git fetch origin dev &&
+            git reset --hard origin/dev &&
+            composer install --no-interaction --prefer-dist --optimize-autoloader &&
+            sudo chown -R www-data:www-data writable cache &&
+            sudo chmod -R 775 writable cache &&
+            sudo find . -type d -exec chmod 755 {} + &&
+            sudo find . -type f -exec chmod 644 {} + &&
+            ls -la . &&
+            sudo php artisan migrate --force &&
+            sudo php artisan config:cache &&
+            sudo php artisan route:cache &&
+            sudo php artisan view:cache'
