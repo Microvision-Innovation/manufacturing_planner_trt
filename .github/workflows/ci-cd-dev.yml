@@ -3,7 +3,7 @@ name: ci-cd-dev-contabo
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   build:
