@@ -130,6 +130,14 @@ class Planner extends Front_Controller
                 'status' => 0
             );
             $schedule_id = $this->schedule_model->insert($schedule_data);
+            //check if there are comments and insert in comments
+            if((ISSET($_POST['comments'])) and ($_POST['comments'] != "") ){
+                $comment_data = array(
+                    'schedule_id' => $schedule_id,
+                    'comments' => $_POST['comments']
+                );
+                $this->comments_model->insert($comment_data);
+            }
             //save the schedule log
             $schedule_log_data = array (
                 'schedule_id' => $schedule_id,
@@ -302,8 +310,9 @@ class Planner extends Front_Controller
             }
             //check if its a comment addition and update
             if((ISSET($_POST['comments'])) and ($_POST['comments'] != "") ){
+                $schedule_id = (ISSET($schedule_id))?$schedule_id:$_POST['comments_schedule_id'];
                 $comment_data = array(
-                    'schedule_id' => $_POST['comments_schedule_id'],
+                    'schedule_id' => $schedule_id,
                     'comments' => $_POST['comments']
                 );
                 $this->comments_model->insert($comment_data);

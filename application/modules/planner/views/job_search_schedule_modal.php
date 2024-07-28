@@ -269,7 +269,7 @@ $j_status = "";
                                                 <div class="form-group">
                                                     <label>Comments</label>
                                                     <textarea class="form-control" rows="2" name="comments" placeholder="Comments"></textarea>
-                                                    <input type="hidden" name="comments_schedule_id" value="<?php echo $schedule_id; ?>">
+                                                    <input type="hidden" name="comments_schedule_id" value="<?php echo (ISSET($schedule_id))?$schedule_id:''; ?>">
                                                 </div>
                                             </div>
                                         </div>
