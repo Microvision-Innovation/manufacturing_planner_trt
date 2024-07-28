@@ -91,6 +91,7 @@ error_reporting(E_ALL);
                                                             <a class="nav-link active" data-toggle="tab" href="#profileSchedulesTab<?php echo $row->id; ?>">Other Schedules</a>
                                                             <a class="nav-link" data-toggle="tab" href="#profileJobsTab<?php echo $row->id; ?>">Bulk/Pack Jobs</a>
                                                             <a class="nav-link" data-toggle="tab" href="#profileLogsTab<?php echo $row->id; ?>">Status Logs</a>
+                                                            <a class="nav-link" data-toggle="tab" href="#profileCommentsTab<?php echo $row->id; ?>">Comments</a>
                                                         </nav>
                                                     </div><!-- card-header -->
                                                     <div class="card-body bd bd-0 tab-content">
@@ -185,9 +186,28 @@ error_reporting(E_ALL);
                                                                 <h5> There are no logs to show </h5>
                                                             <?php endif; ?>
                                                         </div>
+                                                        <div id="profileCommentsTab<?php echo $row->id; ?>" class="tab-pane">
+                                                         <div class="row">
+                                                             <div class="col-md-12">
+                                                                <?php if($job_comments):
+                                                                    foreach($job_comments as $c):
+                                                                        if($c->schedule_job_id == $row->schedule_job_id):
+                                                                    ?>
+                                                                 <div class="media">
+                                                                     <div class="az-img-user online"><img src="<?php echo Template::theme_url('images/notice_icon.png');?>" alt=""></div>
+                                                                     <div class="media-body">
+                                                                         <div class="az-msg-wrapper">
+                                                                             <?php echo $c->comments; ?>
+                                                                             <br><p class="small text-info"><i class="fa fa-calendar"></i> <?php echo date('d M Y', strtotime($c->created_on)); ?> &nbsp;&nbsp; | &nbsp;&nbsp; <i class="fa fa-user"></i> <?php echo $c->display_name; ?></p>
+                                                                         </div><!-- az-msg-wrapper -->
+                                                                     </div><!-- media-body -->
+                                                                 </div><!-- media -->
+                                                                <?php endif; endforeach; endif; ?>
+                                                             </div>
+                                                         </div>
+                                                        </div>
                                                     </div><!-- card-body -->
                                                 </div><!-- card -->
-
                                             </div>
                                         </div>
                                         <!-- display for extension of the job -->
@@ -197,13 +217,22 @@ error_reporting(E_ALL);
                                                 <div>
                                                     <a href="#txtresult2" class="btn btn-outline-primary btn-rounded pull-right" onclick="htmlData2('<?php echo base_url(); ?>planner/extend_schedule','job_area_id=<?php echo $row->job_area_id; ?>&line_id=<?php echo $line_details->id; ?>')"><i class="fa fa-plus"></i> Add Extension</a>
                                                     <br><br><br>
-                                                    <!-- Display for addtional shift that is displayed by ajax-->
+                                                    <!-- Display for additional shift that is displayed by ajax-->
                                                     <div id="txtResult2"></div>
                                                 </div>
                                             </div><!-- media-body -->
                                         </div><!-- media -->
 
                                     </div><!-- media-list -->
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <div class="form-group">
+                                                <label>Comments</label>
+                                                <textarea class="form-control" rows="2" name="comments" placeholder="Comments"></textarea>
+                                                <input type="hidden" name="comments_schedule_id" value="<?php echo $row->id; ?>">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div><!-- az-contact-info-body -->
 
                             <div class="row">

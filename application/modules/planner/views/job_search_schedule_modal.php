@@ -92,6 +92,7 @@ $j_status = "";
                                                             <a class="nav-link active" data-toggle="tab" href="#tabCont1">Other Schedules</a>
                                                             <a class="nav-link" data-toggle="tab" href="#tabCont2">Bulk/Pack Jobs</a>
                                                             <a class="nav-link" data-toggle="tab" href="#tabCont3">Status Logs</a>
+                                                            <a class="nav-link" data-toggle="tab" href="#profileCommentsTab">Comments</a>
                                                         </nav>
                                                     </div><!-- card-header -->
                                                     <div class="card-body bd bd-0 tab-content">
@@ -177,6 +178,23 @@ $j_status = "";
                                                                 <h4> There are no logs to show </h4>
                                                             <?php endif; ?>
                                                         </div>
+                                                        <div id="profileCommentsTab" class="tab-pane">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <?php if($job_comments): foreach($job_comments as $c): ?>
+                                                                        <div class="media">
+                                                                            <div class="az-img-user online"><img src="<?php echo Template::theme_url('images/notice_icon.png');?>" alt=""></div>
+                                                                            <div class="media-body">
+                                                                                <div class="az-msg-wrapper">
+                                                                                    <?php echo $c->comments; ?>
+                                                                                    <br><p class="small text-info"><i class="fa fa-calendar"></i> <?php echo date('d M Y', strtotime($c->created_on)); ?> &nbsp;&nbsp; | &nbsp;&nbsp; <i class="fa fa-user"></i> <?php echo $c->display_name; ?></p>
+                                                                                </div><!-- az-msg-wrapper -->
+                                                                            </div><!-- media-body -->
+                                                                        </div><!-- media -->
+                                                                    <?php endforeach; endif; ?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div><!-- card-body -->
                                                 </div><!-- card -->
 
@@ -246,6 +264,15 @@ $j_status = "";
                                             </div>
                                         </div>
                                         <?php endif; ?>
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <div class="form-group">
+                                                    <label>Comments</label>
+                                                    <textarea class="form-control" rows="2" name="comments" placeholder="Comments"></textarea>
+                                                    <input type="hidden" name="comments_schedule_id" value="<?php echo $schedule_id; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div><!-- media-list -->
                                 </div><!-- az-contact-info-body -->
 

@@ -16,6 +16,7 @@ class Planner extends Front_Controller
 		$this->load->model('schedule_model');
 		$this->load->model('schedule_status_model');
 		$this->load->model('schedule_logs_model');
+		$this->load->model('comments_model');
 		$this->load->model('mapping/job_areas_model');
 		$this->load->model('mapping/lines_model');
 
@@ -93,6 +94,8 @@ class Planner extends Front_Controller
         $data['schedules'] = $this->schedule_model->get_line_shift_schedule($shift_id, $line_id, $schedule_date);
         $data['related_schedules'] = $this->schedule_model->get_related_line_shifts_schedules($shift_id, $line_id, $schedule_date);
         $data['schedule_extensions'] = $this->schedule_model->get_line_shift_schedule_extensions($shift_id, $line_id, $schedule_date);
+        //get comments for schedules
+        $data['job_comments'] = $this->comments_model->get_line_shift_comments($shift_id, $line_id, $schedule_date);
         $data['schedule_logs'] = $this->schedule_model->get_line_shift_schedule_logs($shift_id, $line_id, $schedule_date);
         $data['statuses'] = $this->schedule_model->get_statuses($line_details->job_type_id);
         $data['line_details'] = $line_details;
@@ -297,6 +300,14 @@ class Planner extends Front_Controller
                 log_activity($this->auth->user_id(),"Created new schedule for :".$schedule_job_id.", job number: ".$job_details->job_number, 'planner');
                 Template::set_message('The schedule for  <b>'.$job_details->job_number.'</b> was succesfully created.', 'alert alert-solid-success');
             }
+            //check if its a comment addition and update
+            if((ISSET($_POST['comments'])) and ($_POST['comments'] != "") ){
+                $comment_data = array(
+                    'schedule_id' => $_POST['comments_schedule_id'],
+                    'comments' => $_POST['comments']
+                );
+                $this->comments_model->insert($comment_data);
+            }
             $schedule_details = $this->schedule_model->as_object()
                                                 ->join('bf_vision_job_lines l','l.id = job_line_id','left')
                                                 ->select('bf_vision_schedules.*,l.job_area_id')
@@ -444,14 +455,16 @@ eod;
                                                     ->where(array("job_type_id" => $job_details->job_type,"status"=>1))
                                                     ->find_all();
         //get scheduling details based on the job type
-            //get job areas in the current job type
-            $data['job_areas'] = $this->job_areas_model->where(array("job_type_id" => $job_details->job_type,"status"=>1))->find_all();
-            //get lines for the current job type
-            $data["lines"] = $this->lines_model
+        //get job areas in the current job type
+        $data['job_areas'] = $this->job_areas_model->where(array("job_type_id" => $job_details->job_type,"status"=>1))->find_all();
+        //get lines for the current job type
+        $data["lines"] = $this->lines_model
                                             ->join('bf_vision_job_areas a','a.id =bf_vision_job_lines.job_area_id','inner')
                                             ->where(array("a.job_type_id"=>$job_details->job_type,"bf_vision_job_lines.status"=>1))
                                             ->select('bf_vision_job_lines.*')
                                             ->find_all();
+        //get comments
+        $data['job_comments'] = $this->comments_model->get_schedule_comments($job_details->id);
         $this->load->view('job_search_schedule_modal',$data);
     }
     public function open_jobs($job_id){
