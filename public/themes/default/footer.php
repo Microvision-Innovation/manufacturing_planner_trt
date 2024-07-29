@@ -100,6 +100,7 @@
 </div><!-- az-footer -->
 </div><!-- az-content -->
 <?php echo Assets::js(); ?>
+
 <script>
     $(function(){
         'use strict'

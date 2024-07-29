@@ -341,7 +341,7 @@ error_reporting(E_ALL);
                                                                 <div class="col-sm-12">
                                                                     <label >Search Job Number</label>
                                                                     <div class="input-group">
-                                                                        <input type="text" class="form-control" placeholder="Search for jobs..." onkeypress="htmlData4('<?php echo base_url()."planner/search_job_type_numbers" ?>','job_type=<?php echo $line_details->job_type_id; ?>&job_number='+this.value)">
+                                                                        <input type="text" class="form-control" placeholder="Search for jobs..." oninput="htmlData4('<?php echo base_url()."planner/search_job_type_numbers" ?>','job_type=<?php echo $line_details->job_type_id; ?>&job_number='+this.value)">
                                                                         <span class="input-group-btn">
                                                                           <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
                                                                         </span>

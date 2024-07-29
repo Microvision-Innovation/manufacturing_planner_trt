@@ -21,7 +21,7 @@ Assets::add_js(array('lib/moment/min/moment.min.js','lib/jquery-ui/ui/widgets/da
 
     <!-- Meta -->
     <meta name="description" content="TRT Manufacturing Planner">
-    <meta name="author" content="Edwin Ombego, ombego@gmail.com">
+    <meta name="author" content="Edwin Ombego, edwin.ombego@microvision.co.ke, Microvision Innovations">
 
     <title>TRT Planner <?php echo (ISSET($page_title))?" | ".$page_title:""; ?></title>
 

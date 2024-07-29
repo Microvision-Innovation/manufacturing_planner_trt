@@ -126,7 +126,8 @@ class Schedule_model extends MY_Model {
         return $this->db->query("SELECT sj.*,jt.symbol FROM bf_vision_schedule_jobs sj 
                                         LEFT JOIN bf_vision_job_types jt ON jt.id = sj.job_type
                                         LEFT JOIN (SELECT DISTINCT(schedule_job_id) schedule_job_id FROM bf_vision_schedules WHERE deleated=0) s ON s.schedule_job_id = sj.id 
-                                        WHERE sj.job_number LIKE '%".$job_number."%' and job_type='".$job_type."' and s.schedule_job_id IS NULL and sj.deleted=0 ORDER BY sj.created_on DESC LIMIT 5")->result();
+                                        WHERE sj.job_number LIKE '%".$job_number."%' and job_type='".$job_type."' and s.schedule_job_id IS NULL and sj.deleted=0 
+                                        ORDER BY LOCATE('".$job_number."', sj.job_number), sj.created_on DESC LIMIT 7")->result();
     }
     public function get_data_sheet_data($start_date, $end_date)
     {
